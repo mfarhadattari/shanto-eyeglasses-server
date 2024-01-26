@@ -14,13 +14,16 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint"],
+  "plugins": [
+    "@typescript-eslint"
+  ],
   "rules": {
     "no-undef": "error",
     "no-unused-vars": "error",
-    "no-console": "error",
+    "no-console": "warn",
     "no-var": "error",
     "prefer-const": "error",
-    "no-unused-expressions": "error"
+    "no-unused-expressions": "error",
+    "@typescript-eslint/no-explicit-any": "warn"
   }
 }

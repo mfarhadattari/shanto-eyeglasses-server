@@ -56,9 +56,22 @@ const refreshToken = catchAsync(async (req, res) => {
   });
 });
 
+// my profile controller
+const myProfile = catchAsync(async (req, res) => {
+  const id = req?.user?._id;
+  const result = await AuthServices.myProfile(id);
+
+  sendResponse(res, {
+    status: httpStatus.OK,
+    message: 'Token refresh successfully',
+    data: result,
+  });
+});
+
 // exporting auth controllers
 export const AuthControllers = {
   registerUser,
   loginUser,
   refreshToken,
+  myProfile,
 };

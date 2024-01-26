@@ -1,4 +1,5 @@
 import express from 'express';
+import authValidator from '../../middlewares/authValidator';
 import formDataParser from '../../middlewares/formDataParser';
 import requestBodyValidator from '../../middlewares/requestBodyValidator';
 import { upload } from '../../utils/fileUpload';
@@ -34,6 +35,9 @@ router.get(
   requestBodyValidator(refreshTokenValidationSchema),
   AuthControllers.refreshToken,
 );
+
+// my profile route
+router.get('/my-profile', authValidator, AuthControllers.refreshToken);
 
 // exporting auth route
 export const AuthRoutes = router;

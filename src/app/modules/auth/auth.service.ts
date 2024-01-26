@@ -71,7 +71,7 @@ const loginUser = async (payload: { email: string; password: string }) => {
   return { user, accessToken, refreshToken };
 };
 
-// login user service
+// refresh token service
 const refreshToken = async (token: string) => {
   // decode token
   const decoded = (await decodeToken(
@@ -106,5 +106,16 @@ const refreshToken = async (token: string) => {
   return { user, accessToken };
 };
 
+// my profile service
+const myProfile = async (id: string) => {
+  const result = await User.findById(id);
+  return result;
+};
+
 // exporting auth services
-export const AuthServices = { registerUser, loginUser, refreshToken };
+export const AuthServices = {
+  registerUser,
+  loginUser,
+  refreshToken,
+  myProfile,
+};

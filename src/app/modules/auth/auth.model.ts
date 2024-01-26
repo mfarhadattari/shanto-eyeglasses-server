@@ -22,7 +22,15 @@ const userSchema = new Schema<IUser>(
       required: true,
     },
   },
-  { timestamps: true },
+  {
+    timestamps: true,
+    toJSON: {
+      transform(doc, ret) {
+        delete ret.password;
+        return ret;
+      },
+    },
+  },
 );
 
 export const User = model<IUser>('User', userSchema);

@@ -44,3 +44,13 @@ export const generateToken = async (
     throw new AppError(httpStatus.BAD_REQUEST, 'Failed to generate token');
   }
 };
+
+/* ----------->> Token Decoder Function <<------------- */
+export const decodeToken = async (token: string, secret: string) => {
+  try {
+    const decode = jwt.verify(token, secret);
+    return decode;
+  } catch (error) {
+    throw new AppError(httpStatus.BAD_REQUEST, 'Failed to decode token');
+  }
+};

@@ -1,10 +1,16 @@
 import httpStatus from 'http-status';
+import { JwtPayload } from 'jsonwebtoken';
 import config from '../../config';
 import AppError from '../../error/AppError';
 import { uploadFileIntoCloud } from '../../utils/fileUpload';
 import { IUser } from './auth.interface';
 import { User } from './auth.model';
-import { generateToken, hashingPassword, matchingPassword } from './auth.utils';
+import {
+  decodeToken,
+  generateToken,
+  hashingPassword,
+  matchingPassword,
+} from './auth.utils';
 
 // register user service
 const registerUser = async (file: any, payload: IUser) => {
@@ -65,5 +71,40 @@ const loginUser = async (payload: { email: string; password: string }) => {
   return { user, accessToken, refreshToken };
 };
 
+// login user service
+const refreshToken = async (token: string) => {
+  // decode token
+  const decoded = (await decodeToken(
+    token,
+    config.REFRESH_TOKEN_SECRET,
+  )) as JwtPayload;
+
+  // check user exist
+  const isUserExist = await User.findById(decoded._id);
+  if (!isUserExist) {
+    throw new AppError(httpStatus.NOT_FOUND, 'User not found');
+  }
+
+  // generating new access token
+  const jwtPayload = {
+    _id: isUserExist._id,
+    email: isUserExist.email,
+  };
+  const accessToken = await generateToken(
+    jwtPayload,
+    config.ACCESS_TOKEN_SECRET,
+    config.ACCESS_TOKEN_EXPIRES,
+  );
+
+  const user = {
+    _id: isUserExist._id,
+    name: isUserExist.name,
+    avatar: isUserExist.avatar,
+    email: isUserExist.email,
+  };
+
+  return { user, accessToken };
+};
+
 // exporting auth services
-export const AuthServices = { registerUser, loginUser };
+export const AuthServices = { registerUser, loginUser, refreshToken };

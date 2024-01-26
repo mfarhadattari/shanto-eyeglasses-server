@@ -39,8 +39,26 @@ const loginUser = catchAsync(async (req, res) => {
   });
 });
 
+// refresh token controller
+const refreshToken = catchAsync(async (req, res) => {
+  const token = req.cookies[`refresh-${config.COOKIES_NAME}`];
+  const { user, accessToken } = await AuthServices.refreshToken(token);
+
+  res.cookie(`access-${config.COOKIES_NAME}`, accessToken, {
+    httpOnly: true,
+    secure: config.NODE_ENV !== 'development',
+  });
+
+  sendResponse(res, {
+    status: httpStatus.CREATED,
+    message: 'Token refresh successfully',
+    data: user,
+  });
+});
+
 // exporting auth controllers
 export const AuthControllers = {
   registerUser,
   loginUser,
+  refreshToken,
 };

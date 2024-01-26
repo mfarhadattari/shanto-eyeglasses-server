@@ -5,6 +5,7 @@ import { upload } from '../../utils/fileUpload';
 import { AuthControllers } from './auth.controller';
 import {
   loginUserValidationSchema,
+  refreshTokenValidationSchema,
   registerUserValidationSchema,
 } from './auth.validation';
 
@@ -25,6 +26,13 @@ router.post(
   '/login',
   requestBodyValidator(loginUserValidationSchema),
   AuthControllers.loginUser,
+);
+
+// refresh token route
+router.get(
+  '/refresh-token',
+  requestBodyValidator(refreshTokenValidationSchema),
+  AuthControllers.refreshToken,
 );
 
 // exporting auth route

@@ -19,7 +19,7 @@ app.use(
 app.use(cookieParser());
 
 // application routes
-app.use('/', Routes);
+app.use('/api', Routes);
 
 app.get('/', (req: Request, res: Response) => {
   res.json({

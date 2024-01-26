@@ -3,6 +3,7 @@ import cors from 'cors';
 import express, { Application, Request, Response } from 'express';
 import httpStatus from 'http-status';
 import config from './config';
+import { Routes } from './routes';
 
 const app: Application = express();
 
@@ -16,6 +17,9 @@ app.use(
   }),
 );
 app.use(cookieParser());
+
+// application routes
+app.use('/', Routes);
 
 app.get('/', (req: Request, res: Response) => {
   res.json({

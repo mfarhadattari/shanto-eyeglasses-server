@@ -4,6 +4,7 @@ import express, { Application, Request, Response } from 'express';
 import httpStatus from 'http-status';
 import config from './config';
 import globalErrorHandler from './middlewares/globalErrorHandler';
+import notFound from './middlewares/notFound';
 import { Routes } from './routes';
 
 const app: Application = express();
@@ -22,6 +23,7 @@ app.use(cookieParser());
 // application routes
 app.use('/api', Routes);
 
+// base route
 app.get('/', (req: Request, res: Response) => {
   res.json({
     status: httpStatus.OK,
@@ -30,6 +32,10 @@ app.get('/', (req: Request, res: Response) => {
   });
 });
 
+// global error handler
 app.use(globalErrorHandler);
+
+// not found handler
+app.use(notFound);
 
 export default app;

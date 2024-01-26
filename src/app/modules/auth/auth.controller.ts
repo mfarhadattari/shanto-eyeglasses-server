@@ -1,4 +1,5 @@
 import httpStatus from 'http-status';
+import config from '../../config';
 import catchAsync from '../../utils/catchAsync';
 import sendResponse from '../../utils/sendResponse';
 import { AuthServices } from './auth.service';
@@ -19,12 +20,22 @@ const registerUser = catchAsync(async (req, res) => {
 // login user controller
 const loginUser = catchAsync(async (req, res) => {
   const data = req.body;
-  const result = await AuthServices.loginUser(data);
+  const { user, accessToken, refreshToken } =
+    await AuthServices.loginUser(data);
+
+  res.cookie(`refresh-${config.COOKIES_NAME}`, refreshToken, {
+    httpOnly: true,
+    secure: config.NODE_ENV !== 'development',
+  });
+  res.cookie(`access-${config.COOKIES_NAME}`, accessToken, {
+    httpOnly: true,
+    secure: config.NODE_ENV !== 'development',
+  });
 
   sendResponse(res, {
     status: httpStatus.CREATED,
     message: 'User login successfully',
-    data: result,
+    data: user,
   });
 });
 

@@ -19,6 +19,7 @@ const config = {
   ACCESS_TOKEN_EXPIRES: process.env.ACCESS_TOKEN_EXPIRES as string,
   REFRESH_TOKEN_SECRET: process.env.REFRESH_TOKEN_SECRET as string,
   REFRESH_TOKEN_EXPIRES: process.env.REFRESH_TOKEN_EXPIRES as string,
+  COOKIES_NAME: process.env.COOKIES_NAME as string,
 };
 
 export default config;

@@ -61,6 +61,4 @@ export interface IEyeglass {
   image: string;
   otherRelevantAttributes: Record<string, unknown>;
   isDeleted: boolean;
-  createdAt: Date;
-  updatedAt: Date;
 }

@@ -10,6 +10,11 @@ const config = {
   APP_NAME: process.env.APP_NAME,
   CLIENT_BASE_URL: process.env.CLIENT_BASE_URL,
   BCRYPT_SALT_ROUNDS: process.env.BCRYPT_SALT_ROUNDS,
+  CLOUDINARY_CONFIG: {
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET,
+  },
 };
 
 export default config;

@@ -5,8 +5,9 @@ import { AuthServices } from './auth.service';
 
 // register user controller
 const registerUser = catchAsync(async (req, res) => {
-  const body = req.body;
-  const result = await AuthServices.registerUser(body);
+  const data = req.body;
+  const file = req.file;
+  const result = await AuthServices.registerUser(file, data);
 
   sendResponse(res, {
     status: httpStatus.CREATED,

@@ -3,7 +3,10 @@ import formDataParser from '../../middlewares/formDataParser';
 import requestBodyValidator from '../../middlewares/requestBodyValidator';
 import { upload } from '../../utils/fileUpload';
 import { AuthControllers } from './auth.controller';
-import { registerUserValidationSchema } from './auth.validation';
+import {
+  loginUserValidationSchema,
+  registerUserValidationSchema,
+} from './auth.validation';
 
 // initialize route
 const router = express.Router();
@@ -15,6 +18,13 @@ router.post(
   formDataParser,
   requestBodyValidator(registerUserValidationSchema),
   AuthControllers.registerUser,
+);
+
+// login user route
+router.post(
+  '/login',
+  requestBodyValidator(loginUserValidationSchema),
+  AuthControllers.loginUser,
 );
 
 // exporting auth route

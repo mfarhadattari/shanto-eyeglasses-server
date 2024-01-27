@@ -48,6 +48,10 @@ export const createEyeglassValidationSchema = z.object({
       invalid_type_error: 'Color must be string',
       required_error: 'Color must be provide',
     }),
+    otherRelevantAttributes: z
+      .record(z.string(), z.unknown())
+      .optional()
+      .default({}),
   }),
 });
 
@@ -100,5 +104,9 @@ export const updateEyeglassValidationSchema = z.object({
         invalid_type_error: 'Color must be string',
       })
       .optional(),
+    otherRelevantAttributes: z
+      .record(z.string(), z.unknown())
+      .optional()
+      .default({}),
   }),
 });

@@ -5,6 +5,7 @@ import AppError from '../../error/AppError';
 import { Eyeglass } from '../eyeglass/eyeglass.model';
 import { ISale } from './sale.interface';
 import { Sale } from './sale.model';
+import { currentMonthStartDate, currentWeekStartDate } from './sale.utils';
 
 // add sale service
 const addSale = async (user: JwtPayload, payload: ISale) => {
@@ -71,8 +72,50 @@ const addSale = async (user: JwtPayload, payload: ISale) => {
 };
 
 // get all sales
-const getAllSales = async () => {
-  const result = await Sale.find().populate('product seller');
+const getAllSales = async (
+  filter: 'daily' | 'weekly' | 'monthly' | 'yearly' | null,
+) => {
+  let filterQuery: Record<string, unknown> = {};
+
+  if (filter === 'daily') {
+    filterQuery = {
+      saleAt: {
+        $gte: new Date(
+          new Date().getFullYear(),
+          new Date().getMonth(),
+          new Date().getDate(),
+        ),
+      },
+    };
+  }
+
+  if (filter === 'weekly') {
+    filterQuery = {
+      saleAt: {
+        $gt: currentWeekStartDate(),
+      },
+    };
+  }
+
+  if (filter === 'monthly') {
+    filterQuery = {
+      saleAt: {
+        $gt: currentMonthStartDate(),
+      },
+    };
+  }
+
+  if (filter === 'yearly') {
+    filterQuery = {
+      saleAt: {
+        $gt: new Date(new Date().getFullYear(), 0, 1),
+      },
+    };
+  }
+
+  const result = await Sale.find(filterQuery)
+    .sort('-saleAt')
+    .populate('product seller');
   return result;
 };
 

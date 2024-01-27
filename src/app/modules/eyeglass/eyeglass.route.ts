@@ -19,5 +19,11 @@ router.post(
   EyeglassControllers.addEyeglass,
 );
 
+// get eyeglasses route
+router.get('/', EyeglassControllers.getEyeglasses);
+
+// get eyeglass route
+router.get('/:id', EyeglassControllers.getEyeglass);
+
 // exporting eyeglass routes
 export const EyeglassRoutes = router;

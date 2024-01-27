@@ -12,5 +12,17 @@ const addEyeglass = async (file: any, payload: IEyeglass) => {
   return result;
 };
 
+// get all eyeglasses service
+const getEyeglasses = async () => {
+  const result = await Eyeglass.find();
+  return result;
+};
+
+// get single eyeglass service
+const getEyeglass = async (id: string) => {
+  const result = await Eyeglass.findById(id);
+  return result;
+};
+
 // exporting eyeglass services
-export const EyeglassServices = { addEyeglass };
+export const EyeglassServices = { addEyeglass, getEyeglasses, getEyeglass };

@@ -16,5 +16,28 @@ const addEyeglass = catchAsync(async (req, res) => {
   });
 });
 
+// get eyeglasses controller
+const getEyeglasses = catchAsync(async (req, res) => {
+  const result = await EyeglassServices.getEyeglasses();
+
+  sendResponse(res, {
+    status: httpStatus.OK,
+    message: 'Eyeglasses retrieve successfully',
+    data: result,
+  });
+});
+
+// get eyeglasses controller
+const getEyeglass = catchAsync(async (req, res) => {
+  const id = req.params.id;
+  const result = await EyeglassServices.getEyeglass(id);
+
+  sendResponse(res, {
+    status: httpStatus.OK,
+    message: 'Eyeglass retrieve successfully',
+    data: result,
+  });
+});
+
 // exporting eyeglass controllers
-export const EyeglassControllers = { addEyeglass };
+export const EyeglassControllers = { addEyeglass, getEyeglasses, getEyeglass };

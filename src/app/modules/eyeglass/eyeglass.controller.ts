@@ -52,10 +52,23 @@ const updateEyeglass = catchAsync(async (req, res) => {
   });
 });
 
+// delete eyeglass controller
+const deleteEyeglass = catchAsync(async (req, res) => {
+  const id = req.params.id;
+  const result = await EyeglassServices.deleteEyeglass(id);
+
+  sendResponse(res, {
+    status: httpStatus.OK,
+    message: 'Eyeglass deleted successfully',
+    data: result,
+  });
+});
+
 // exporting eyeglass controllers
 export const EyeglassControllers = {
   addEyeglass,
   getEyeglasses,
   getEyeglass,
   updateEyeglass,
+  deleteEyeglass,
 };

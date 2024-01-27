@@ -36,5 +36,8 @@ router.put(
   EyeglassControllers.updateEyeglass,
 );
 
+// delete eyeglass route
+router.delete('/:id', authValidator, EyeglassControllers.deleteEyeglass);
+
 // exporting eyeglass routes
 export const EyeglassRoutes = router;

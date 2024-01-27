@@ -39,11 +39,31 @@ const updateEyeglass = async (id: string, payload: Partial<IEyeglass>) => {
     }
   }
 
-  await Eyeglass.findByIdAndUpdate(id, payload);
+  await Eyeglass.findByIdAndUpdate(id, payload, {
+    new: true,
+    runValidators: true,
+    upsert: true,
+  });
 
   // getting updated eyeglass
   const result = await Eyeglass.findById(id);
   return result;
+};
+
+// delete eyeglass service
+const deleteEyeglass = async (id: string) => {
+  await Eyeglass.findByIdAndUpdate(
+    id,
+    {
+      isDeleted: true,
+    },
+    {
+      new: true,
+      runValidators: true,
+    },
+  );
+
+  return null;
 };
 
 // exporting eyeglass services
@@ -52,4 +72,5 @@ export const EyeglassServices = {
   getEyeglasses,
   getEyeglass,
   updateEyeglass,
+  deleteEyeglass,
 };

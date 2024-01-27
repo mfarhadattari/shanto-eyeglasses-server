@@ -16,7 +16,32 @@ const addSale = catchAsync(async (req, res) => {
   });
 });
 
+// get all sales controller
+const getAllSales = catchAsync(async (req, res) => {
+  const result = await SaleServices.getAllSales();
+
+  sendResponse(res, {
+    status: httpStatus.OK,
+    message: 'Sales retrieve successfully',
+    data: result,
+  });
+});
+
+// get single sale controller
+const getSale = catchAsync(async (req, res) => {
+  const id = req.params.id;
+  const result = await SaleServices.getSale(id);
+
+  sendResponse(res, {
+    status: httpStatus.OK,
+    message: 'Sale retrieve successfully',
+    data: result,
+  });
+});
+
 // exporting Sale controllers
 export const SaleControllers = {
   addSale,
+  getAllSales,
+  getSale,
 };

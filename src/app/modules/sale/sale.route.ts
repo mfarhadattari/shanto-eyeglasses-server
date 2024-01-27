@@ -15,5 +15,11 @@ router.post(
   SaleControllers.addSale,
 );
 
+// get all sales route
+router.get('/', authValidator, SaleControllers.getAllSales);
+
+// get a sale route
+router.get('/:id', authValidator, SaleControllers.getSale);
+
 // exporting Sale routes
 export const SaleRoutes = router;

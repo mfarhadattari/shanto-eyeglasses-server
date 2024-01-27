@@ -70,7 +70,21 @@ const addSale = async (user: JwtPayload, payload: ISale) => {
   }
 };
 
+// get all sales
+const getAllSales = async () => {
+  const result = await Sale.find().populate('product seller');
+  return result;
+};
+
+// get single sales
+const getSale = async (id: string) => {
+  const result = await Sale.findById(id).populate('product seller');
+  return result;
+};
+
 // exporting sale services
 export const SaleServices = {
   addSale,
+  getAllSales,
+  getSale,
 };

@@ -16,9 +16,10 @@ const addEyeglass = catchAsync(async (req, res) => {
   });
 });
 
-// get eyeglasses controller
+// get all eyeglasses controller
 const getEyeglasses = catchAsync(async (req, res) => {
-  const result = await EyeglassServices.getEyeglasses();
+  const searchQuery = req.query;
+  const result = await EyeglassServices.getEyeglasses(searchQuery);
 
   sendResponse(res, {
     status: httpStatus.OK,

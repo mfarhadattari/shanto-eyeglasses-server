@@ -1,3 +1,4 @@
+import QueryBuilder from '../../utils/QueryBuilder';
 import { uploadFileIntoCloud } from '../../utils/fileUpload';
 import { IEyeglass } from './eyeglass.interface';
 import { Eyeglass } from './eyeglass.model';
@@ -13,8 +14,14 @@ const addEyeglass = async (file: any, payload: IEyeglass) => {
 };
 
 // get all eyeglasses service
-const getEyeglasses = async () => {
-  const result = await Eyeglass.find();
+const getEyeglasses = async (searchQuery: Record<string, unknown>) => {
+  const modelQuery = Eyeglass.find();
+  const eyeglassQuery = new QueryBuilder(modelQuery, searchQuery)
+    .searching(['name'])
+    .filtering()
+    .paginating();
+
+  const result = await eyeglassQuery.modelQuery;
   return result;
 };
 

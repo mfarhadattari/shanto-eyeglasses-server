@@ -33,7 +33,7 @@ const loginUser = catchAsync(async (req, res) => {
   });
 
   sendResponse(res, {
-    status: httpStatus.CREATED,
+    status: httpStatus.OK,
     message: 'User login successfully',
     data: user,
   });
@@ -50,7 +50,7 @@ const refreshToken = catchAsync(async (req, res) => {
   });
 
   sendResponse(res, {
-    status: httpStatus.CREATED,
+    status: httpStatus.OK,
     message: 'Token refresh successfully',
     data: user,
   });

@@ -5,7 +5,7 @@ const saleSchema = new Schema<ISale>({
   product: {
     type: Schema.Types.ObjectId,
     required: true,
-    ref: 'Product',
+    ref: 'Eyeglass',
   },
   quantity: {
     type: Number,

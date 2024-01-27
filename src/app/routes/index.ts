@@ -1,6 +1,7 @@
 import express from 'express';
 import { AuthRoutes } from '../modules/auth/auth.route';
 import { EyeglassRoutes } from '../modules/eyeglass/eyeglass.route';
+import { SaleRoutes } from '../modules/sale/sale.route';
 
 // initialize route
 const router = express.Router();
@@ -13,6 +14,10 @@ const applicationRoutes = [
   {
     path: '/eyeglasses',
     router: EyeglassRoutes,
+  },
+  {
+    path: '/sales',
+    router: SaleRoutes,
   },
 ];
 

@@ -1,3 +1,5 @@
+import httpStatus from 'http-status';
+import AppError from '../../error/AppError';
 import QueryBuilder from '../../utils/QueryBuilder';
 import { uploadFileIntoCloud } from '../../utils/fileUpload';
 import { IEyeglass } from './eyeglass.interface';
@@ -19,7 +21,8 @@ const getEyeglasses = async (searchQuery: Record<string, unknown>) => {
   const eyeglassQuery = new QueryBuilder(modelQuery, searchQuery)
     .searching(['name'])
     .filtering()
-    .paginating();
+    .sorting();
+  // .paginating();
 
   const result = await eyeglassQuery.modelQuery;
   return result;
@@ -39,7 +42,10 @@ const updateEyeglass = async (id: string, payload: Partial<IEyeglass>) => {
     ...remainingEyeglassInfo,
   };
 
-  const relevantAttributes = otherRelevantAttributes as Record<string, unknown>;
+  const relevantAttributes = otherRelevantAttributes as Record<
+    string,
+    string | number | boolean
+  >;
   if (relevantAttributes && Object.keys(relevantAttributes).length) {
     for (const [key, value] of Object.entries(relevantAttributes)) {
       modifiedEyeglassInfo[`otherRelevantAttributes.${key}`] = value;
@@ -59,10 +65,14 @@ const updateEyeglass = async (id: string, payload: Partial<IEyeglass>) => {
 
 // delete eyeglass service
 const deleteEyeglass = async (id: string) => {
+  const eyeglass = await Eyeglass.findById(id);
+  if (!eyeglass) {
+    throw new AppError(httpStatus.NOT_FOUND, 'No eyeglass found');
+  }
   await Eyeglass.findByIdAndUpdate(
     id,
     {
-      isDeleted: true,
+      isDeleted: !eyeglass.isDeleted,
     },
     {
       new: true,

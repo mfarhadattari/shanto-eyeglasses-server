@@ -49,7 +49,7 @@ export const createEyeglassValidationSchema = z.object({
       required_error: 'Color must be provide',
     }),
     otherRelevantAttributes: z
-      .record(z.string(), z.unknown())
+      .record(z.string(), z.union([z.string(), z.number(), z.boolean()]))
       .optional()
       .default({}),
   }),
@@ -105,7 +105,7 @@ export const updateEyeglassValidationSchema = z.object({
       })
       .optional(),
     otherRelevantAttributes: z
-      .record(z.string(), z.unknown())
+      .record(z.string(), z.union([z.string(), z.number(), z.boolean()]))
       .optional()
       .default({}),
   }),

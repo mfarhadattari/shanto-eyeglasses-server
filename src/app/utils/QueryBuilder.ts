@@ -58,6 +58,11 @@ class QueryBuilder<T> {
     this.modelQuery = this.modelQuery.skip(skip).limit(limit);
     return this;
   }
+
+  public sorting() {
+    this.modelQuery = this.modelQuery.sort('-updatedAt');
+    return this;
+  }
 }
 
 export default QueryBuilder;

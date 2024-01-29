@@ -50,7 +50,7 @@ export const decodeToken = async (token: string, secret: string) => {
   try {
     const decode = jwt.verify(token, secret);
     return decode;
-  } catch (error) {
-    throw new AppError(httpStatus.BAD_REQUEST, 'Failed to decode token');
+  } catch (error: any) {
+    throw new AppError(httpStatus.UNAUTHORIZED, error.message);
   }
 };

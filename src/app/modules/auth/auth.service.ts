@@ -41,7 +41,7 @@ const loginUser = async (payload: { email: string; password: string }) => {
   );
 
   if (!isPasswordMatched) {
-    throw new AppError(httpStatus.UNAUTHORIZED, 'Wrong password');
+    throw new AppError(httpStatus.BAD_REQUEST, 'Wrong password');
   }
 
   // generating token

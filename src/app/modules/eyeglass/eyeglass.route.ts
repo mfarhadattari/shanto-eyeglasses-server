@@ -23,10 +23,10 @@ router.post(
 );
 
 // get eyeglasses route
-router.get('/', EyeglassControllers.getEyeglasses);
+router.get('/', authValidator, EyeglassControllers.getEyeglasses);
 
 // get eyeglass route
-router.get('/:id', EyeglassControllers.getEyeglass);
+router.get('/:id', authValidator, EyeglassControllers.getEyeglass);
 
 // update eyeglass route
 router.put(

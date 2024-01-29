@@ -26,7 +26,7 @@ class QueryBuilder<T> {
     const queryObject = { ...this.searchQuery };
 
     // price range filtering -> price= 200-400,
-    if (queryObject.price) {
+    if (queryObject.price !== 'null' && queryObject.price) {
       const price = (queryObject?.price as string)
         .split('-')
         .map((item) => Number(item));

@@ -16,6 +16,9 @@ import {
 const registerUser = async (file: any, payload: IUser) => {
   // uploading avatar
   const { secure_url } = (await uploadFileIntoCloud(file)) as any;
+  if (!secure_url) {
+    throw new AppError(httpStatus.BAD_REQUEST, 'File upload failed');
+  }
   payload.avatar = secure_url;
 
   // hashing password

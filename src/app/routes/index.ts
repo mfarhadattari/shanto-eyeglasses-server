@@ -1,5 +1,6 @@
 import express from 'express';
 import { AuthRoutes } from '../modules/auth/auth.route';
+import { DashboardRoutes } from '../modules/dashboard/dashboard.route';
 import { EyeglassRoutes } from '../modules/eyeglass/eyeglass.route';
 import { SaleRoutes } from '../modules/sale/sale.route';
 
@@ -18,6 +19,10 @@ const applicationRoutes = [
   {
     path: '/sales',
     router: SaleRoutes,
+  },
+  {
+    path: '/dashboard',
+    router: DashboardRoutes,
   },
 ];
 

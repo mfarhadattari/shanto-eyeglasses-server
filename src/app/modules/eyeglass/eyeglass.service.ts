@@ -9,6 +9,9 @@ import { Eyeglass } from './eyeglass.model';
 const addEyeglass = async (file: any, payload: IEyeglass) => {
   // upload file
   const { secure_url } = (await uploadFileIntoCloud(file)) as any;
+  if (!secure_url) {
+    throw new AppError(httpStatus.BAD_REQUEST, 'File upload failed');
+  }
   payload.image = secure_url;
   // save into db
   const result = await Eyeglass.create(payload);

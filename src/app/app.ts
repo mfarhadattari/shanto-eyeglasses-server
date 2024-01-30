@@ -11,14 +11,14 @@ const app: Application = express();
 
 // parser
 app.use(express.json());
+app.use(cookieParser());
 app.use(
   cors({
-    origin: config.CLIENT_BASE_URL,
-    optionsSuccessStatus: 200,
+    origin: [config.CLIENT_BASE_URL],
+    methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
     credentials: true,
   }),
 );
-app.use(cookieParser());
 
 // application routes
 app.use('/api', Routes);
@@ -28,7 +28,9 @@ app.get('/', (req: Request, res: Response) => {
   res.json({
     status: httpStatus.OK,
     message: 'Eyeglasses Management Server is running',
-    data: null,
+    data: {
+      clientApi: config.CLIENT_BASE_URL,
+    },
   });
 });
 

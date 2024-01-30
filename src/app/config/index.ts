@@ -8,7 +8,7 @@ const config = {
   PORT: process.env.PORT,
   DB_URI: process.env.DB_URI,
   APP_NAME: process.env.APP_NAME,
-  CLIENT_BASE_URL: process.env.CLIENT_BASE_URL,
+  CLIENT_BASE_URL: process.env.CLIENT_BASE_URL as string,
   BCRYPT_SALT_ROUNDS: process.env.BCRYPT_SALT_ROUNDS,
   CLOUDINARY_CONFIG: {
     cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -19,7 +19,6 @@ const config = {
   ACCESS_TOKEN_EXPIRES: process.env.ACCESS_TOKEN_EXPIRES as string,
   REFRESH_TOKEN_SECRET: process.env.REFRESH_TOKEN_SECRET as string,
   REFRESH_TOKEN_EXPIRES: process.env.REFRESH_TOKEN_EXPIRES as string,
-  COOKIES_NAME: process.env.COOKIES_NAME as string,
 };
 
 export default config;

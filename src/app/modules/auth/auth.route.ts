@@ -6,7 +6,6 @@ import { upload } from '../../utils/fileUpload';
 import { AuthControllers } from './auth.controller';
 import {
   loginUserValidationSchema,
-  refreshTokenValidationSchema,
   registerUserValidationSchema,
 } from './auth.validation';
 
@@ -30,14 +29,10 @@ router.post(
 );
 
 // refresh token route
-router.get(
-  '/refresh-token',
-  requestBodyValidator(refreshTokenValidationSchema),
-  AuthControllers.refreshToken,
-);
+router.post('/refresh-token', AuthControllers.refreshToken);
 
 // my profile route
-router.get('/my-profile', authValidator, AuthControllers.refreshToken);
+router.get('/my-profile', authValidator, AuthControllers.myProfile);
 
 // exporting auth route
 export const AuthRoutes = router;

@@ -10,7 +10,8 @@ import catchAsync from '../utils/catchAsync';
 const authValidator = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
     // check token exist
-    const accessToken = req.cookies[`access-${config.COOKIES_NAME}`];
+    const accessToken = req.headers['authorization'];
+
     if (!accessToken) {
       throw new AppError(
         httpStatus.UNAUTHORIZED,

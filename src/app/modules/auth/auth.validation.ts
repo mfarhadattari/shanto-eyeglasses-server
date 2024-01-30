@@ -1,5 +1,4 @@
 import z from 'zod';
-import config from '../../config';
 
 export const registerUserValidationSchema = z.object({
   body: z.object({
@@ -31,14 +30,6 @@ export const loginUserValidationSchema = z.object({
     password: z.string({
       invalid_type_error: 'Password must be string',
       required_error: 'Password must be provide',
-    }),
-  }),
-});
-
-export const refreshTokenValidationSchema = z.object({
-  cookies: z.object({
-    [`refresh-${config.COOKIES_NAME}`]: z.string({
-      required_error: 'Refresh token is required',
     }),
   }),
 });

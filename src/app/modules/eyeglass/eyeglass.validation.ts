@@ -110,3 +110,9 @@ export const updateEyeglassValidationSchema = z.object({
       .default({}),
   }),
 });
+
+export const bulkDeleteEyeglassesValidationSchema = z.object({
+  body: z.object({
+    ids: z.array(z.string()),
+  }),
+});

@@ -1,4 +1,5 @@
 import httpStatus from 'http-status';
+import { Types } from 'mongoose';
 import AppError from '../../error/AppError';
 import QueryBuilder from '../../utils/QueryBuilder';
 import { uploadFileIntoCloud } from '../../utils/fileUpload';
@@ -25,7 +26,6 @@ const getEyeglasses = async (searchQuery: Record<string, unknown>) => {
     .searching(['name'])
     .filtering()
     .sorting();
-  // .paginating();
 
   const result = await eyeglassQuery.modelQuery;
   return result;
@@ -72,7 +72,7 @@ const deleteEyeglass = async (id: string) => {
   if (!eyeglass) {
     throw new AppError(httpStatus.NOT_FOUND, 'No eyeglass found');
   }
-  await Eyeglass.findByIdAndUpdate(
+  const res = await Eyeglass.findByIdAndUpdate(
     id,
     {
       isDeleted: !eyeglass.isDeleted,
@@ -82,6 +82,33 @@ const deleteEyeglass = async (id: string) => {
       runValidators: true,
     },
   );
+
+  return { isDeleted: res?.isDeleted };
+};
+
+// bulk delete eyeglasses services
+const bulkDeleteEyeglasses = async (ids: string[]) => {
+  const eyeglassIds = ids.map((id) => new Types.ObjectId(id));
+  const eyeglasses = await Eyeglass.find({
+    _id: { $in: eyeglassIds },
+  });
+  if (!eyeglasses) {
+    throw new AppError(httpStatus.NOT_FOUND, 'No eyeglasses found');
+  }
+
+  const res = await Eyeglass.updateMany(
+    { _id: { $in: eyeglassIds } },
+    {
+      isDeleted: true,
+    },
+    {
+      runValidators: true,
+    },
+  );
+
+  if (res.modifiedCount <= 0) {
+    throw new AppError(httpStatus.BAD_REQUEST, 'Failed to delete eyeglasses');
+  }
 
   return null;
 };
@@ -93,4 +120,5 @@ export const EyeglassServices = {
   getEyeglass,
   updateEyeglass,
   deleteEyeglass,
+  bulkDeleteEyeglasses,
 };

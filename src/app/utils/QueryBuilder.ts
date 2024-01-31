@@ -11,14 +11,16 @@ class QueryBuilder<T> {
 
   public searching(searchAbleFields: string[]) {
     const searchTerm = this.searchQuery?.searchTerm || '';
-    this.modelQuery = this.modelQuery.find({
-      $or: searchAbleFields.map(
-        (field) =>
-          ({
-            [field]: { $regex: searchTerm, $options: 'i' },
-          }) as FilterQuery<T>,
-      ),
-    });
+    this.modelQuery = this.modelQuery
+      .find({
+        $or: searchAbleFields.map(
+          (field) =>
+            ({
+              [field]: { $regex: searchTerm, $options: 'i' },
+            }) as FilterQuery<T>,
+        ),
+      })
+      .sort('-createdAt');
     return this;
   }
 
@@ -46,7 +48,9 @@ class QueryBuilder<T> {
     const excludeFields = ['searchTerm', 'page', 'limit', 'price'];
     excludeFields.forEach((field) => delete queryObject[field]);
 
-    this.modelQuery = this.modelQuery.find(queryObject as FilterQuery<T>);
+    this.modelQuery = this.modelQuery
+      .find(queryObject as FilterQuery<T>)
+      .sort('-createdAt');
     return this;
   }
 
@@ -60,7 +64,7 @@ class QueryBuilder<T> {
   }
 
   public sorting() {
-    this.modelQuery = this.modelQuery.sort('-updatedAt');
+    this.modelQuery = this.modelQuery.sort('-createdAt');
     return this;
   }
 }

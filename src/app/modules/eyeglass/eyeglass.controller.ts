@@ -60,7 +60,19 @@ const deleteEyeglass = catchAsync(async (req, res) => {
 
   sendResponse(res, {
     status: httpStatus.OK,
-    message: 'Eyeglass deleted successfully',
+    message: `${result.isDeleted ? 'Deleted' : 'Delete back'} successfully`,
+    data: result,
+  });
+});
+
+// bulk delete eyeglasses controller
+const bulkDeleteEyeglasses = catchAsync(async (req, res) => {
+  const { ids } = req.body;
+  const result = await EyeglassServices.bulkDeleteEyeglasses(ids as string[]);
+
+  sendResponse(res, {
+    status: httpStatus.OK,
+    message: 'Eyeglasses deleted successfully',
     data: result,
   });
 });
@@ -72,4 +84,5 @@ export const EyeglassControllers = {
   getEyeglass,
   updateEyeglass,
   deleteEyeglass,
+  bulkDeleteEyeglasses,
 };

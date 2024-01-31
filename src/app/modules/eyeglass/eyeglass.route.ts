@@ -5,6 +5,7 @@ import requestBodyValidator from '../../middlewares/requestBodyValidator';
 import { upload } from '../../utils/fileUpload';
 import { EyeglassControllers } from './eyeglass.controller';
 import {
+  bulkDeleteEyeglassesValidationSchema,
   createEyeglassValidationSchema,
   updateEyeglassValidationSchema,
 } from './eyeglass.validation';
@@ -24,6 +25,14 @@ router.post(
 
 // get eyeglasses route
 router.get('/', authValidator, EyeglassControllers.getEyeglasses);
+
+// bulk delete eyeglasses route
+router.delete(
+  '/bulk-delete',
+  authValidator,
+  requestBodyValidator(bulkDeleteEyeglassesValidationSchema),
+  EyeglassControllers.bulkDeleteEyeglasses,
+);
 
 // get eyeglass route
 router.get('/:id', authValidator, EyeglassControllers.getEyeglass);

@@ -7,6 +7,10 @@ const saleSchema = new Schema<ISale>({
     required: true,
     ref: 'Eyeglass',
   },
+  productPrice: {
+    type: Number,
+    required: true,
+  },
   quantity: {
     type: Number,
     required: true,

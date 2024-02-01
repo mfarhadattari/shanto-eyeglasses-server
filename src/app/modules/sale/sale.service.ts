@@ -25,6 +25,7 @@ const addSale = async (user: JwtPayload, payload: ISale) => {
 
   // add seller info
   payload.seller = user._id;
+  payload.productPrice = product.price;
 
   // run operation into db
   const session = await mongoose.startSession();

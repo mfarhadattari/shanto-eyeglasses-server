@@ -28,7 +28,7 @@ const authValidator = catchAsync(
     // check user exist
     const isUserExist = await User.findById(decoded._id);
     if (!isUserExist) {
-      throw new AppError(httpStatus.NOT_FOUND, 'User not found');
+      throw new AppError(httpStatus.UNAUTHORIZED, 'User not found');
     }
 
     req.user = decoded;

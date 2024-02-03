@@ -1,0 +1,1504 @@
+{
+  "info": {
+    "_postman_id": "f4fef854-81ab-4e43-87c2-89399c02d28f",
+    "name": "Eyeglasses Management",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "31226472"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register User",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "data",
+                  "value": "{\n    \"name\": \"Mohammad Farhad\",\n    \"email\": \"mfarhad21@gmail.com\",\n    \"password\": \"12345\"\n}",
+                  "type": "text"
+                },
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": "/C:/Users/mfarh/Downloads/1edbbc43520f4673e2279a8d0635ca96.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{api-eyeglasses-management}}/auth/register",
+              "host": ["{{api-eyeglasses-management}}"],
+              "path": ["auth", "register"]
+            }
+          },
+          "response": [
+            {
+              "name": "Register User",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "data",
+                      "value": "{\n    \"name\": \"Mohammad Farhad\",\n    \"email\": \"mfarhad21@gmail.com\",\n    \"password\": \"12345\"\n}",
+                      "type": "text"
+                    },
+                    {
+                      "key": "file",
+                      "type": "file",
+                      "src": "/C:/Users/mfarh/Downloads/1edbbc43520f4673e2279a8d0635ca96.jpg"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{api-eyeglasses-management}}/auth/register",
+                  "host": ["{{api-eyeglasses-management}}"],
+                  "path": ["auth", "register"]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "public, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "336"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 03 Feb 2024 06:45:26 GMT"
+                },
+                {
+                  "key": "Etag",
+                  "value": "W/\"150-kcCq5JW1DfvKd9hMa1ZxPFif04Y\""
+                },
+                {
+                  "key": "Server",
+                  "value": "Vercel"
+                },
+                {
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=63072000; includeSubDomains; preload"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "X-Vercel-Cache",
+                  "value": "MISS"
+                },
+                {
+                  "key": "X-Vercel-Id",
+                  "value": "sin1::iad1::n87rz-1706942723267-19b987b97ceb"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"User register successfully\",\n    \"data\": {\n        \"name\": \"Mohammad Farhad\",\n        \"email\": \"mfarhad21@gmail.com\",\n        \"avatar\": \"https://res.cloudinary.com/djs19qulb/image/upload/v1706942725/vpel7jofqoepkfgqflue.jpg\",\n        \"_id\": \"65bde1067a5cb1bca06f5eae\",\n        \"createdAt\": \"2024-02-03T06:45:26.144Z\",\n        \"updatedAt\": \"2024-02-03T06:45:26.144Z\",\n        \"__v\": 0\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Login User",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"mfarhad21@gmail.com\",\r\n    \"password\": \"12345\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{api-eyeglasses-management}}/auth/login",
+              "host": ["{{api-eyeglasses-management}}"],
+              "path": ["auth", "login"]
+            }
+          },
+          "response": [
+            {
+              "name": "Login User",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\": \"mfarhad21@gmail.com\",\r\n    \"password\": \"12345\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{api-eyeglasses-management}}/auth/login",
+                  "host": ["{{api-eyeglasses-management}}"],
+                  "path": ["auth", "login"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "public, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "715"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 03 Feb 2024 06:46:13 GMT"
+                },
+                {
+                  "key": "Etag",
+                  "value": "W/\"2cb-SAiMOLI+4nMCeUWjE+HHUIEYc8s\""
+                },
+                {
+                  "key": "Server",
+                  "value": "Vercel"
+                },
+                {
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=63072000; includeSubDomains; preload"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "X-Vercel-Cache",
+                  "value": "MISS"
+                },
+                {
+                  "key": "X-Vercel-Id",
+                  "value": "sin1::iad1::p7qql-1706942773301-5c0df3c7c598"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"User login successfully\",\n    \"data\": {\n        \"user\": {\n            \"_id\": \"65bde1067a5cb1bca06f5eae\",\n            \"name\": \"Mohammad Farhad\",\n            \"avatar\": \"https://res.cloudinary.com/djs19qulb/image/upload/v1706942725/vpel7jofqoepkfgqflue.jpg\",\n            \"email\": \"mfarhad21@gmail.com\"\n        },\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWJkZTEwNjdhNWNiMWJjYTA2ZjVlYWUiLCJlbWFpbCI6Im1mYXJoYWQyMUBnbWFpbC5jb20iLCJpYXQiOjE3MDY5NDI3NzMsImV4cCI6MTcwNzU0NzU3M30.U6FZacSxAojTZT8t_wdFJ_0DAcO6fjr2uASi2n0iWRw\",\n        \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWJkZTEwNjdhNWNiMWJjYTA2ZjVlYWUiLCJlbWFpbCI6Im1mYXJoYWQyMUBnbWFpbC5jb20iLCJpYXQiOjE3MDY5NDI3NzMsImV4cCI6MTcwOTUzNDc3M30.hMqe3i9-YecP7QBcADXDy0uthrCgcS3Q9SSLygZ-qQ0\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Refresh Token",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWJkZTEwNjdhNWNiMWJjYTA2ZjVlYWUiLCJlbWFpbCI6Im1mYXJoYWQyMUBnbWFpbC5jb20iLCJpYXQiOjE3MDY5NDI3NzMsImV4cCI6MTcwOTUzNDc3M30.hMqe3i9-YecP7QBcADXDy0uthrCgcS3Q9SSLygZ-qQ0",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{api-eyeglasses-management}}/auth/refresh-token",
+              "host": ["{{api-eyeglasses-management}}"],
+              "path": ["auth", "refresh-token"]
+            }
+          },
+          "response": [
+            {
+              "name": "Refresh Token",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWJkZTEwNjdhNWNiMWJjYTA2ZjVlYWUiLCJlbWFpbCI6Im1mYXJoYWQyMUBnbWFpbC5jb20iLCJpYXQiOjE3MDY5NDI3NzMsImV4cCI6MTcwOTUzNDc3M30.hMqe3i9-YecP7QBcADXDy0uthrCgcS3Q9SSLygZ-qQ0",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{api-eyeglasses-management}}/auth/refresh-token",
+                  "host": ["{{api-eyeglasses-management}}"],
+                  "path": ["auth", "refresh-token"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "public, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "488"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 03 Feb 2024 06:46:55 GMT"
+                },
+                {
+                  "key": "Etag",
+                  "value": "W/\"1e8-HQQQgAsnzIyR1nwQ2PHami+0If8\""
+                },
+                {
+                  "key": "Server",
+                  "value": "Vercel"
+                },
+                {
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=63072000; includeSubDomains; preload"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "X-Vercel-Cache",
+                  "value": "MISS"
+                },
+                {
+                  "key": "X-Vercel-Id",
+                  "value": "sin1::iad1::46x2k-1706942815292-1ee367366b83"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Token refresh successfully\",\n    \"data\": {\n        \"user\": {\n            \"_id\": \"65bde1067a5cb1bca06f5eae\",\n            \"name\": \"Mohammad Farhad\",\n            \"avatar\": \"https://res.cloudinary.com/djs19qulb/image/upload/v1706942725/vpel7jofqoepkfgqflue.jpg\",\n            \"email\": \"mfarhad21@gmail.com\"\n        },\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWJkZTEwNjdhNWNiMWJjYTA2ZjVlYWUiLCJlbWFpbCI6Im1mYXJoYWQyMUBnbWFpbC5jb20iLCJpYXQiOjE3MDY5NDI4MTUsImV4cCI6MTcwNzU0NzYxNX0.0VdWk3vFRpa8x2ZVVRyMQhzxIlFutUM4SpyvlLysqfI\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "My Profile",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWJkZTEwNjdhNWNiMWJjYTA2ZjVlYWUiLCJlbWFpbCI6Im1mYXJoYWQyMUBnbWFpbC5jb20iLCJpYXQiOjE3MDY5NDI5MjcsImV4cCI6MTcwNzU0NzcyN30.1PRg-dbp39F-Kqnq3di8Z3VLxgdJgJ2REwPNfpt9-14",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{api-eyeglasses-management}}/auth/my-profile",
+              "host": ["{{api-eyeglasses-management}}"],
+              "path": ["auth", "my-profile"]
+            }
+          },
+          "response": [
+            {
+              "name": "My Profile",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWJkZTEwNjdhNWNiMWJjYTA2ZjVlYWUiLCJlbWFpbCI6Im1mYXJoYWQyMUBnbWFpbC5jb20iLCJpYXQiOjE3MDY5NDI5MjcsImV4cCI6MTcwNzU0NzcyN30.1PRg-dbp39F-Kqnq3di8Z3VLxgdJgJ2REwPNfpt9-14",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{api-eyeglasses-management}}/auth/my-profile",
+                  "host": ["{{api-eyeglasses-management}}"],
+                  "path": ["auth", "my-profile"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "public, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "336"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 03 Feb 2024 06:49:00 GMT"
+                },
+                {
+                  "key": "Etag",
+                  "value": "W/\"150-75eu//NsAlkWvv/9CFC+lQSuNDU\""
+                },
+                {
+                  "key": "Server",
+                  "value": "Vercel"
+                },
+                {
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=63072000; includeSubDomains; preload"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "X-Vercel-Cache",
+                  "value": "BYPASS"
+                },
+                {
+                  "key": "X-Vercel-Id",
+                  "value": "sin1::iad1::7sc82-1706942940133-a3a4312f4472"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Token refresh successfully\",\n    \"data\": {\n        \"_id\": \"65bde1067a5cb1bca06f5eae\",\n        \"name\": \"Mohammad Farhad\",\n        \"email\": \"mfarhad21@gmail.com\",\n        \"avatar\": \"https://res.cloudinary.com/djs19qulb/image/upload/v1706942725/vpel7jofqoepkfgqflue.jpg\",\n        \"createdAt\": \"2024-02-03T06:45:26.144Z\",\n        \"updatedAt\": \"2024-02-03T06:45:26.144Z\",\n        \"__v\": 0\n    }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Eyeglasses Inventory Management",
+      "item": [
+        {
+          "name": "Add Eyeglass",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWJkZTEwNjdhNWNiMWJjYTA2ZjVlYWUiLCJlbWFpbCI6Im1mYXJoYWQyMUBnbWFpbC5jb20iLCJpYXQiOjE3MDY5NDI5MjcsImV4cCI6MTcwNzU0NzcyN30.1PRg-dbp39F-Kqnq3di8Z3VLxgdJgJ2REwPNfpt9-14",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "data",
+                  "value": "{\n    \"name\": \"Classic Wayfarer Sunglasses\",\n    \"price\": 199.99,\n    \"quantity\": 10,\n    \"frameMaterial\": \"acetate\",\n    \"frameShape\": \"wayfarer\",\n    \"lensType\": \"polarized\",\n    \"brand\": \"Ray-Ban\",\n    \"gender\": \"unisex\",\n    \"color\": \"black\"\n}",
+                  "type": "text"
+                },
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": "/C:/Users/mfarh/Downloads/eyeglasses-wear (1).jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{api-eyeglasses-management}}/eyeglasses",
+              "host": ["{{api-eyeglasses-management}}"],
+              "path": ["eyeglasses"]
+            }
+          },
+          "response": [
+            {
+              "name": "Add Eyeglass",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWJkZTEwNjdhNWNiMWJjYTA2ZjVlYWUiLCJlbWFpbCI6Im1mYXJoYWQyMUBnbWFpbC5jb20iLCJpYXQiOjE3MDY5NDI5MjcsImV4cCI6MTcwNzU0NzcyN30.1PRg-dbp39F-Kqnq3di8Z3VLxgdJgJ2REwPNfpt9-14",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "data",
+                      "value": "{\n    \"name\": \"Classic Wayfarer Sunglasses\",\n    \"price\": 199.99,\n    \"quantity\": 10,\n    \"frameMaterial\": \"acetate\",\n    \"frameShape\": \"wayfarer\",\n    \"lensType\": \"polarized\",\n    \"brand\": \"Ray-Ban\",\n    \"gender\": \"unisex\",\n    \"color\": \"black\"\n}",
+                      "type": "text"
+                    },
+                    {
+                      "key": "file",
+                      "type": "file",
+                      "src": "/C:/Users/mfarh/Downloads/eyeglasses-wear (1).jpg"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{api-eyeglasses-management}}/eyeglasses",
+                  "host": ["{{api-eyeglasses-management}}"],
+                  "path": ["eyeglasses"]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "public, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "490"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 03 Feb 2024 06:50:10 GMT"
+                },
+                {
+                  "key": "Etag",
+                  "value": "W/\"1ea-HzSHRCSUynFp6MhGZg0zm6aD6qc\""
+                },
+                {
+                  "key": "Server",
+                  "value": "Vercel"
+                },
+                {
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=63072000; includeSubDomains; preload"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "X-Vercel-Cache",
+                  "value": "MISS"
+                },
+                {
+                  "key": "X-Vercel-Id",
+                  "value": "sin1::iad1::qhqnm-1706943008013-435ad144122e"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Eyeglass added successfully\",\n    \"data\": {\n        \"name\": \"Classic Wayfarer Sunglasses\",\n        \"price\": 199.99,\n        \"quantity\": 10,\n        \"frameMaterial\": \"acetate\",\n        \"frameShape\": \"wayfarer\",\n        \"lensType\": \"polarized\",\n        \"brand\": \"Ray-Ban\",\n        \"gender\": \"unisex\",\n        \"color\": \"black\",\n        \"image\": \"https://res.cloudinary.com/djs19qulb/image/upload/v1706943010/hupinnnco8js7jsrnxgc.jpg\",\n        \"isDeleted\": false,\n        \"_id\": \"65bde2227a5cb1bca06f5eb9\",\n        \"createdAt\": \"2024-02-03T06:50:10.395Z\",\n        \"updatedAt\": \"2024-02-03T06:50:10.395Z\",\n        \"__v\": 0\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Eyeglasses",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWJkZTEwNjdhNWNiMWJjYTA2ZjVlYWUiLCJlbWFpbCI6Im1mYXJoYWQyMUBnbWFpbC5jb20iLCJpYXQiOjE3MDY5NDI5MjcsImV4cCI6MTcwNzU0NzcyN30.1PRg-dbp39F-Kqnq3di8Z3VLxgdJgJ2REwPNfpt9-14",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{api-eyeglasses-management}}/eyeglasses",
+              "host": ["{{api-eyeglasses-management}}"],
+              "path": ["eyeglasses"]
+            }
+          },
+          "response": [
+            {
+              "name": "Get Eyeglasses",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWJkZTEwNjdhNWNiMWJjYTA2ZjVlYWUiLCJlbWFpbCI6Im1mYXJoYWQyMUBnbWFpbC5jb20iLCJpYXQiOjE3MDY5NDI5MjcsImV4cCI6MTcwNzU0NzcyN30.1PRg-dbp39F-Kqnq3di8Z3VLxgdJgJ2REwPNfpt9-14",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{api-eyeglasses-management}}/eyeglasses",
+                  "host": ["{{api-eyeglasses-management}}"],
+                  "path": ["eyeglasses"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "public, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 03 Feb 2024 06:50:36 GMT"
+                },
+                {
+                  "key": "Etag",
+                  "value": "W/\"17a5-wPxQf5PgZhL1eUAWID/bpQ36v3w\""
+                },
+                {
+                  "key": "Server",
+                  "value": "Vercel"
+                },
+                {
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=63072000; includeSubDomains; preload"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "X-Vercel-Cache",
+                  "value": "BYPASS"
+                },
+                {
+                  "key": "X-Vercel-Id",
+                  "value": "sin1::iad1::h464f-1706943035912-8900699d4109"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Eyeglasses retrieve successfully\",\n    \"data\": [\n        {\n            \"_id\": \"65bde2227a5cb1bca06f5eb9\",\n            \"name\": \"Classic Wayfarer Sunglasses\",\n            \"price\": 199.99,\n            \"quantity\": 10,\n            \"frameMaterial\": \"acetate\",\n            \"frameShape\": \"wayfarer\",\n            \"lensType\": \"polarized\",\n            \"brand\": \"Ray-Ban\",\n            \"gender\": \"unisex\",\n            \"color\": \"black\",\n            \"image\": \"https://res.cloudinary.com/djs19qulb/image/upload/v1706943010/hupinnnco8js7jsrnxgc.jpg\",\n            \"isDeleted\": false,\n            \"createdAt\": \"2024-02-03T06:50:10.395Z\",\n            \"updatedAt\": \"2024-02-03T06:50:10.395Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65bdd395b449b51356740da6\",\n            \"name\": \"Eyeglass 1\",\n            \"price\": 40,\n            \"quantity\": 50,\n            \"frameMaterial\": \"plastic\",\n            \"frameShape\": \"d-frame\",\n            \"lensType\": \"digital\",\n            \"brand\": \"Brand 1\",\n            \"gender\": \"unisex\",\n            \"color\": \"Yello\",\n            \"image\": \"https://res.cloudinary.com/djs19qulb/image/upload/v1706939285/ovttowv1lgopsrtdayfu.jpg\",\n            \"isDeleted\": false,\n            \"createdAt\": \"2024-02-03T05:48:05.960Z\",\n            \"updatedAt\": \"2024-02-03T05:48:05.960Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65b9e48064a0bbc43b02d43f\",\n            \"name\": \"Retro Hello\",\n            \"price\": 200,\n            \"quantity\": 7,\n            \"frameMaterial\": \"metal\",\n            \"frameShape\": \"browline\",\n            \"lensType\": \"blue-cut\",\n            \"brand\": \"Brand1\",\n            \"gender\": \"men\",\n            \"color\": \"grey\",\n            \"image\": \"https://res.cloudinary.com/djs19qulb/image/upload/v1706681472/pjdus5qbhqgna4mzf5tb.jpg\",\n            \"isDeleted\": false,\n            \"createdAt\": \"2024-01-31T06:11:12.949Z\",\n            \"updatedAt\": \"2024-02-03T05:45:27.248Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65b9e4be64a0bbc43b02d44d\",\n            \"name\": \"Retro Clubmaster Style Variant\",\n            \"price\": 100,\n            \"quantity\": 100,\n            \"frameMaterial\": \"metal\",\n            \"frameShape\": \"browline\",\n            \"lensType\": \"blue-cut\",\n            \"brand\": \"Brand1\",\n            \"gender\": \"women\",\n            \"color\": \"red\",\n            \"image\": \"https://res.cloudinary.com/djs19qulb/image/upload/v1706681533/bnzgbymerhr84t7p8ttj.jpg\",\n            \"isDeleted\": true,\n            \"createdAt\": \"2024-01-31T06:11:12.949Z\",\n            \"updatedAt\": \"2024-02-03T05:45:21.317Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65bdd29a59e54455a025d543\",\n            \"name\": \"Retro Hello Variant\",\n            \"price\": 500,\n            \"quantity\": 100,\n            \"frameMaterial\": \"metal\",\n            \"frameShape\": \"browline\",\n            \"lensType\": \"blue-cut\",\n            \"brand\": \"Brand1\",\n            \"gender\": \"men\",\n            \"color\": \"grey\",\n            \"image\": \"https://res.cloudinary.com/djs19qulb/image/upload/v1706939033/zrhlvkrso1nrupec1h7a.jpg\",\n            \"isDeleted\": false,\n            \"createdAt\": \"2024-01-31T06:11:12.949Z\",\n            \"updatedAt\": \"2024-01-31T06:11:12.949Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65b9e24c7754a3183b44bdf5\",\n            \"name\": \"Wooden Cat-Eye Chic\",\n            \"price\": 75.5,\n            \"quantity\": 65,\n            \"frameMaterial\": \"wood\",\n            \"frameShape\": \"cat-eye\",\n            \"lensType\": \"progressive\",\n            \"brand\": \"EcoStyle\",\n            \"gender\": \"women\",\n            \"color\": \"brown\",\n            \"image\": \"https://res.cloudinary.com/djs19qulb/image/upload/v1706680729/91627421_Cleaning_cloth_for_eyewear_-2_sagadz.jpg\",\n            \"isDeleted\": false,\n            \"updatedAt\": \"2024-02-02T06:40:20.083Z\"\n        },\n        {\n            \"_id\": \"65b9e24c7754a3183b44bdfc\",\n            \"name\": \"Retro Clubmaster Style\",\n            \"price\": 70.25,\n            \"quantity\": 105,\n            \"frameMaterial\": \"acetate\",\n            \"frameShape\": \"clubmaster\",\n            \"lensType\": \"single-vision\",\n            \"brand\": \"VintageClub\",\n            \"gender\": \"unisex\",\n            \"color\": \"tortoise\",\n            \"image\": \"https://res.cloudinary.com/djs19qulb/image/upload/v1706680724/eyeglasses-wear_1_j1accq.jpg\",\n            \"isDeleted\": false,\n            \"updatedAt\": \"2024-02-02T06:40:24.811Z\"\n        },\n        {\n            \"_id\": \"65b9e24c7754a3183b44bdf6\",\n            \"name\": \"Modern Aviator\",\n            \"price\": 95.25,\n            \"quantity\": 114,\n            \"frameMaterial\": \"stainless-steel\",\n            \"frameShape\": \"aviator\",\n            \"lensType\": \"polarized\",\n            \"brand\": \"TechVision\",\n            \"gender\": \"men\",\n            \"color\": \"gunmetal\",\n            \"image\": \"https://res.cloudinary.com/djs19qulb/image/upload/v1706680726/eyeglasses-wear_rymiwa.jpg\",\n            \"isDeleted\": false,\n            \"updatedAt\": \"2024-01-31T06:05:11.344Z\"\n        },\n        {\n            \"_id\": \"65b9e24c7754a3183b44bdf4\",\n            \"name\": \"Classic Metal Frame\",\n            \"price\": 50.99,\n            \"quantity\": 93,\n            \"frameMaterial\": \"metal\",\n            \"frameShape\": \"square\",\n            \"lensType\": \"single-vision\",\n            \"brand\": \"FashionOptics\",\n            \"gender\": \"unisex\",\n            \"color\": \"silver\",\n            \"image\": \"https://res.cloudinary.com/djs19qulb/image/upload/v1706680729/91627490_Cleaning_cloth_for_eyewear_-6_g3kwqk.jpg\",\n            \"isDeleted\": false,\n            \"updatedAt\": \"2024-01-31T06:09:54.261Z\"\n        },\n        {\n            \"_id\": \"65b9e24c7754a3183b44bdf8\",\n            \"name\": \"Fashionable Round Cat Eye\",\n            \"price\": 80,\n            \"quantity\": 110,\n            \"frameMaterial\": \"plastic\",\n            \"frameShape\": \"round cat eye\",\n            \"lensType\": \"trifocal\",\n            \"brand\": \"VogueStyle\",\n            \"gender\": \"women\",\n            \"color\": \"black\",\n            \"image\": \"https://res.cloudinary.com/djs19qulb/image/upload/v1706680724/sunglasses_74190-7550_qbrx00.jpg\",\n            \"isDeleted\": false,\n            \"updatedAt\": \"2024-02-03T05:45:00.767Z\"\n        },\n        {\n            \"_id\": \"65b9e24c7754a3183b44bdfb\",\n            \"name\": \"Elegant Butterfly Design\",\n            \"price\": 110.75,\n            \"quantity\": 85,\n            \"frameMaterial\": \"mixed-materials\",\n            \"frameShape\": \"butterfly\",\n            \"lensType\": \"progressive\",\n            \"brand\": \"FancyEyes\",\n            \"gender\": \"women\",\n            \"color\": \"rose gold\",\n            \"image\": \"https://res.cloudinary.com/djs19qulb/image/upload/v1706680723/close-up-retro-sunglasses-with-copy-space_23-2148290433_fj3rug.jpg\",\n            \"isDeleted\": false,\n            \"updatedAt\": \"2024-02-02T06:40:10.327Z\"\n        },\n        {\n            \"_id\": \"65b9e24c7754a3183b44bdfd\",\n            \"name\": \"Hexagon Fashion Forward\",\n            \"price\": 85.99,\n            \"quantity\": 100,\n            \"frameMaterial\": \"plastic\",\n            \"frameShape\": \"hexagon\",\n            \"lensType\": \"blue-cut\",\n            \"brand\": \"HexStyle\",\n            \"gender\": \"unisex\",\n            \"color\": \"purple\",\n            \"image\": \"https://res.cloudinary.com/djs19qulb/image/upload/v1706680726/eyeglasses-wear_rymiwa.jpg\",\n            \"isDeleted\": false,\n            \"updatedAt\": \"2024-02-02T09:18:59.848Z\"\n        },\n        {\n            \"_id\": \"65b9e24c7754a3183b44bdf7\",\n            \"name\": \"Clear Rectangle Style\",\n            \"price\": 60.75,\n            \"quantity\": 85,\n            \"frameMaterial\": \"acetate\",\n            \"frameShape\": \"rectangle\",\n            \"lensType\": \"bifocal\",\n            \"brand\": \"Clarity\",\n            \"gender\": \"unisex\",\n            \"color\": \"clear\",\n            \"image\": \"https://res.cloudinary.com/djs19qulb/image/upload/v1706680724/eyeglasses-wear_1_j1accq.jpg\",\n            \"isDeleted\": false,\n            \"updatedAt\": \"2024-02-02T09:19:10.662Z\"\n        },\n        {\n            \"_id\": \"65b9e24c7754a3183b44bdf9\",\n            \"name\": \"Sporty Wraparound\",\n            \"price\": 65.99,\n            \"quantity\": 75,\n            \"frameMaterial\": \"mixed-materials\",\n            \"frameShape\": \"wraparound\",\n            \"lensType\": \"uv-protective\",\n            \"brand\": \"ActiveWear\",\n            \"gender\": \"unisex\",\n            \"color\": \"blue\",\n            \"image\": \"https://res.cloudinary.com/djs19qulb/image/upload/v1706680723/eyeglasses-wear_74190-2480_bw1wt9.jpg\",\n            \"isDeleted\": false,\n            \"updatedAt\": \"2024-02-02T09:20:32.746Z\"\n        },\n        {\n            \"_id\": \"65b9e24c7754a3183b44bdfa\",\n            \"name\": \"Vintage D-Frame\",\n            \"price\": 120.5,\n            \"quantity\": 95,\n            \"frameMaterial\": \"zyl\",\n            \"frameShape\": \"d-frame\",\n            \"lensType\": \"photochromic\",\n            \"brand\": \"RetroVision\",\n            \"gender\": \"men\",\n            \"color\": \"tortoise\",\n            \"image\": \"https://res.cloudinary.com/djs19qulb/image/upload/v1706680723/eyeglasses-wear_74190-2480_bw1wt9.jpg\",\n            \"isDeleted\": false,\n            \"updatedAt\": \"2024-02-02T09:20:37.613Z\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Eyeglass",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWJkZTEwNjdhNWNiMWJjYTA2ZjVlYWUiLCJlbWFpbCI6Im1mYXJoYWQyMUBnbWFpbC5jb20iLCJpYXQiOjE3MDY5NDI5MjcsImV4cCI6MTcwNzU0NzcyN30.1PRg-dbp39F-Kqnq3di8Z3VLxgdJgJ2REwPNfpt9-14",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{api-eyeglasses-management}}/eyeglasses/65bde2227a5cb1bca06f5eb9",
+              "host": ["{{api-eyeglasses-management}}"],
+              "path": ["eyeglasses", "65bde2227a5cb1bca06f5eb9"]
+            }
+          },
+          "response": [
+            {
+              "name": "Get Eyeglass",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWJkZTEwNjdhNWNiMWJjYTA2ZjVlYWUiLCJlbWFpbCI6Im1mYXJoYWQyMUBnbWFpbC5jb20iLCJpYXQiOjE3MDY5NDI5MjcsImV4cCI6MTcwNzU0NzcyN30.1PRg-dbp39F-Kqnq3di8Z3VLxgdJgJ2REwPNfpt9-14",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{api-eyeglasses-management}}/eyeglasses/65bde2227a5cb1bca06f5eb9",
+                  "host": ["{{api-eyeglasses-management}}"],
+                  "path": ["eyeglasses", "65bde2227a5cb1bca06f5eb9"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "public, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "493"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 03 Feb 2024 06:51:32 GMT"
+                },
+                {
+                  "key": "Etag",
+                  "value": "W/\"1ed-fu6+2XtBDrqlx8xIRKegefCmmj0\""
+                },
+                {
+                  "key": "Server",
+                  "value": "Vercel"
+                },
+                {
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=63072000; includeSubDomains; preload"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "X-Vercel-Cache",
+                  "value": "BYPASS"
+                },
+                {
+                  "key": "X-Vercel-Id",
+                  "value": "sin1::iad1::4v6gs-1706943091810-aa9f0c057af2"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Eyeglass retrieve successfully\",\n    \"data\": {\n        \"_id\": \"65bde2227a5cb1bca06f5eb9\",\n        \"name\": \"Classic Wayfarer Sunglasses\",\n        \"price\": 199.99,\n        \"quantity\": 10,\n        \"frameMaterial\": \"acetate\",\n        \"frameShape\": \"wayfarer\",\n        \"lensType\": \"polarized\",\n        \"brand\": \"Ray-Ban\",\n        \"gender\": \"unisex\",\n        \"color\": \"black\",\n        \"image\": \"https://res.cloudinary.com/djs19qulb/image/upload/v1706943010/hupinnnco8js7jsrnxgc.jpg\",\n        \"isDeleted\": false,\n        \"createdAt\": \"2024-02-03T06:50:10.395Z\",\n        \"updatedAt\": \"2024-02-03T06:50:10.395Z\",\n        \"__v\": 0\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Eyeglasses",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWJkZTEwNjdhNWNiMWJjYTA2ZjVlYWUiLCJlbWFpbCI6Im1mYXJoYWQyMUBnbWFpbC5jb20iLCJpYXQiOjE3MDY5NDI5MjcsImV4cCI6MTcwNzU0NzcyN30.1PRg-dbp39F-Kqnq3di8Z3VLxgdJgJ2REwPNfpt9-14",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Classic Wayfarer\",\r\n    \"price\": 200,\r\n    \"quantity\": 40,\r\n    \"gender\": \"men\",\r\n    \"color\": \"black\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{api-eyeglasses-management}}/eyeglasses/65bde2227a5cb1bca06f5eb9",
+              "host": ["{{api-eyeglasses-management}}"],
+              "path": ["eyeglasses", "65bde2227a5cb1bca06f5eb9"]
+            }
+          },
+          "response": [
+            {
+              "name": "Update Eyeglasses",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWJkZTEwNjdhNWNiMWJjYTA2ZjVlYWUiLCJlbWFpbCI6Im1mYXJoYWQyMUBnbWFpbC5jb20iLCJpYXQiOjE3MDY5NDI5MjcsImV4cCI6MTcwNzU0NzcyN30.1PRg-dbp39F-Kqnq3di8Z3VLxgdJgJ2REwPNfpt9-14",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Classic Wayfarer\",\r\n    \"price\": 200,\r\n    \"quantity\": 40,\r\n    \"gender\": \"men\",\r\n    \"color\": \"black\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{api-eyeglasses-management}}/eyeglasses/65bde2227a5cb1bca06f5eb9",
+                  "host": ["{{api-eyeglasses-management}}"],
+                  "path": ["eyeglasses", "65bde2227a5cb1bca06f5eb9"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "public, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "475"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 03 Feb 2024 06:53:43 GMT"
+                },
+                {
+                  "key": "Etag",
+                  "value": "W/\"1db-MgKa8aTFclDPMQBK+WnuFT0t7ss\""
+                },
+                {
+                  "key": "Server",
+                  "value": "Vercel"
+                },
+                {
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=63072000; includeSubDomains; preload"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "X-Vercel-Cache",
+                  "value": "MISS"
+                },
+                {
+                  "key": "X-Vercel-Id",
+                  "value": "sin1::iad1::zq6jk-1706943222553-24249d37329b"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Eyeglass updated successfully\",\n    \"data\": {\n        \"_id\": \"65bde2227a5cb1bca06f5eb9\",\n        \"name\": \"Classic Wayfarer\",\n        \"price\": 200,\n        \"quantity\": 40,\n        \"frameMaterial\": \"acetate\",\n        \"frameShape\": \"wayfarer\",\n        \"lensType\": \"polarized\",\n        \"brand\": \"Ray-Ban\",\n        \"gender\": \"men\",\n        \"color\": \"black\",\n        \"image\": \"https://res.cloudinary.com/djs19qulb/image/upload/v1706943010/hupinnnco8js7jsrnxgc.jpg\",\n        \"isDeleted\": false,\n        \"createdAt\": \"2024-02-03T06:50:10.395Z\",\n        \"updatedAt\": \"2024-02-03T06:53:42.892Z\",\n        \"__v\": 0\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete Eyeglass",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWJkZTEwNjdhNWNiMWJjYTA2ZjVlYWUiLCJlbWFpbCI6Im1mYXJoYWQyMUBnbWFpbC5jb20iLCJpYXQiOjE3MDY5NDI5MjcsImV4cCI6MTcwNzU0NzcyN30.1PRg-dbp39F-Kqnq3di8Z3VLxgdJgJ2REwPNfpt9-14",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{api-eyeglasses-management}}/eyeglasses/65bde2227a5cb1bca06f5eb9",
+              "host": ["{{api-eyeglasses-management}}"],
+              "path": ["eyeglasses", "65bde2227a5cb1bca06f5eb9"]
+            }
+          },
+          "response": [
+            {
+              "name": "Delete Eyeglass",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWJkZTEwNjdhNWNiMWJjYTA2ZjVlYWUiLCJlbWFpbCI6Im1mYXJoYWQyMUBnbWFpbC5jb20iLCJpYXQiOjE3MDY5NDI5MjcsImV4cCI6MTcwNzU0NzcyN30.1PRg-dbp39F-Kqnq3di8Z3VLxgdJgJ2REwPNfpt9-14",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{api-eyeglasses-management}}/eyeglasses/65bde2227a5cb1bca06f5eb9",
+                  "host": ["{{api-eyeglasses-management}}"],
+                  "path": ["eyeglasses", "65bde2227a5cb1bca06f5eb9"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "public, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "75"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 03 Feb 2024 06:54:15 GMT"
+                },
+                {
+                  "key": "Etag",
+                  "value": "W/\"4b-73DKav7PQpsJCLKSy5YiX3zEsaI\""
+                },
+                {
+                  "key": "Server",
+                  "value": "Vercel"
+                },
+                {
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=63072000; includeSubDomains; preload"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "X-Vercel-Cache",
+                  "value": "MISS"
+                },
+                {
+                  "key": "X-Vercel-Id",
+                  "value": "sin1::iad1::6b9cd-1706943254764-862f4aad04e9"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Deleted successfully\",\n    \"data\": {\n        \"isDeleted\": true\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Bulk Delete Eyeglasses",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWJkZTEwNjdhNWNiMWJjYTA2ZjVlYWUiLCJlbWFpbCI6Im1mYXJoYWQyMUBnbWFpbC5jb20iLCJpYXQiOjE3MDY5NDI5MjcsImV4cCI6MTcwNzU0NzcyN30.1PRg-dbp39F-Kqnq3di8Z3VLxgdJgJ2REwPNfpt9-14",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"ids\": [\"65b9e48064a0bbc43b02d43f\", \"65bdd395b449b51356740da6\", \"65bde2227a5cb1bca06f5eb9\"]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{api-eyeglasses-management}}/eyeglasses/bulk-delete",
+              "host": ["{{api-eyeglasses-management}}"],
+              "path": ["eyeglasses", "bulk-delete"]
+            }
+          },
+          "response": [
+            {
+              "name": "Bulk Delete Eyeglasses",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWJkZTEwNjdhNWNiMWJjYTA2ZjVlYWUiLCJlbWFpbCI6Im1mYXJoYWQyMUBnbWFpbC5jb20iLCJpYXQiOjE3MDY5NDI5MjcsImV4cCI6MTcwNzU0NzcyN30.1PRg-dbp39F-Kqnq3di8Z3VLxgdJgJ2REwPNfpt9-14",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"ids\": [\"65b9e48064a0bbc43b02d43f\", \"65bdd395b449b51356740da6\", \"65bde2227a5cb1bca06f5eb9\"]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{api-eyeglasses-management}}/eyeglasses/bulk-delete",
+                  "host": ["{{api-eyeglasses-management}}"],
+                  "path": ["eyeglasses", "bulk-delete"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "public, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "72"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 03 Feb 2024 06:56:23 GMT"
+                },
+                {
+                  "key": "Etag",
+                  "value": "W/\"48-+N5RHKWvN6ytjIELYpu02JOGifY\""
+                },
+                {
+                  "key": "Server",
+                  "value": "Vercel"
+                },
+                {
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=63072000; includeSubDomains; preload"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "X-Vercel-Cache",
+                  "value": "MISS"
+                },
+                {
+                  "key": "X-Vercel-Id",
+                  "value": "sin1::iad1::pgh45-1706943382821-f5ad3d929585"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Eyeglasses deleted successfully\",\n    \"data\": null\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sales Management",
+      "item": [
+        {
+          "name": "Add Sell",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWJkZTEwNjdhNWNiMWJjYTA2ZjVlYWUiLCJlbWFpbCI6Im1mYXJoYWQyMUBnbWFpbC5jb20iLCJpYXQiOjE3MDY5NDI5MjcsImV4cCI6MTcwNzU0NzcyN30.1PRg-dbp39F-Kqnq3di8Z3VLxgdJgJ2REwPNfpt9-14",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"product\" : \"65bdd29a59e54455a025d543\",\r\n    \"quantity\": 4,\r\n    \"buyerName\": \"Jr Tahsin\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{api-eyeglasses-management}}/sales",
+              "host": ["{{api-eyeglasses-management}}"],
+              "path": ["sales"]
+            }
+          },
+          "response": [
+            {
+              "name": "Add Sell",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWJkZTEwNjdhNWNiMWJjYTA2ZjVlYWUiLCJlbWFpbCI6Im1mYXJoYWQyMUBnbWFpbC5jb20iLCJpYXQiOjE3MDY5NDI5MjcsImV4cCI6MTcwNzU0NzcyN30.1PRg-dbp39F-Kqnq3di8Z3VLxgdJgJ2REwPNfpt9-14",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"product\" : \"65bdd29a59e54455a025d543\",\r\n    \"quantity\": 4,\r\n    \"buyerName\": \"Jr Tahsin\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{api-eyeglasses-management}}/sales",
+                  "host": ["{{api-eyeglasses-management}}"],
+                  "path": ["sales"]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "public, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "889"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 03 Feb 2024 06:58:54 GMT"
+                },
+                {
+                  "key": "Etag",
+                  "value": "W/\"379-HUcIWx+OLptFdG6r9IdcRTxzf/c\""
+                },
+                {
+                  "key": "Server",
+                  "value": "Vercel"
+                },
+                {
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=63072000; includeSubDomains; preload"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "X-Vercel-Cache",
+                  "value": "MISS"
+                },
+                {
+                  "key": "X-Vercel-Id",
+                  "value": "sin1::iad1::w9dpt-1706943532435-3e83a38d0ebc"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Sold successfully\",\n    \"data\": {\n        \"_id\": \"65bde42c7a5cb1bca06f5ed8\",\n        \"product\": {\n            \"_id\": \"65bdd29a59e54455a025d543\",\n            \"name\": \"Retro Hello Variant\",\n            \"price\": 500,\n            \"quantity\": 96,\n            \"frameMaterial\": \"metal\",\n            \"frameShape\": \"browline\",\n            \"lensType\": \"blue-cut\",\n            \"brand\": \"Brand1\",\n            \"gender\": \"men\",\n            \"color\": \"grey\",\n            \"image\": \"https://res.cloudinary.com/djs19qulb/image/upload/v1706939033/zrhlvkrso1nrupec1h7a.jpg\",\n            \"isDeleted\": false,\n            \"createdAt\": \"2024-01-31T06:11:12.949Z\",\n            \"updatedAt\": \"2024-02-03T06:58:53.168Z\",\n            \"__v\": 0\n        },\n        \"productPrice\": 500,\n        \"quantity\": 4,\n        \"buyerName\": \"Jr Tahsin\",\n        \"seller\": {\n            \"_id\": \"65bde1067a5cb1bca06f5eae\",\n            \"name\": \"Mohammad Farhad\",\n            \"email\": \"mfarhad21@gmail.com\",\n            \"avatar\": \"https://res.cloudinary.com/djs19qulb/image/upload/v1706942725/vpel7jofqoepkfgqflue.jpg\",\n            \"createdAt\": \"2024-02-03T06:45:26.144Z\",\n            \"updatedAt\": \"2024-02-03T06:45:26.144Z\",\n            \"__v\": 0\n        },\n        \"saleAt\": \"2024-02-03T06:58:52.967Z\",\n        \"__v\": 0\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Sales",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWJkZTEwNjdhNWNiMWJjYTA2ZjVlYWUiLCJlbWFpbCI6Im1mYXJoYWQyMUBnbWFpbC5jb20iLCJpYXQiOjE3MDY5NDI5MjcsImV4cCI6MTcwNzU0NzcyN30.1PRg-dbp39F-Kqnq3di8Z3VLxgdJgJ2REwPNfpt9-14",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{api-eyeglasses-management}}/sales",
+              "host": ["{{api-eyeglasses-management}}"],
+              "path": ["sales"]
+            }
+          },
+          "response": [
+            {
+              "name": "Get Sales",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWJkZTEwNjdhNWNiMWJjYTA2ZjVlYWUiLCJlbWFpbCI6Im1mYXJoYWQyMUBnbWFpbC5jb20iLCJpYXQiOjE3MDY5NDI5MjcsImV4cCI6MTcwNzU0NzcyN30.1PRg-dbp39F-Kqnq3di8Z3VLxgdJgJ2REwPNfpt9-14",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{api-eyeglasses-management}}/sales",
+                  "host": ["{{api-eyeglasses-management}}"],
+                  "path": ["sales"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "public, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 03 Feb 2024 06:59:48 GMT"
+                },
+                {
+                  "key": "Etag",
+                  "value": "W/\"9ee-LVWh3Mo+gLfdBIatoTL6MwjSiRM\""
+                },
+                {
+                  "key": "Server",
+                  "value": "Vercel"
+                },
+                {
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=63072000; includeSubDomains; preload"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "X-Vercel-Cache",
+                  "value": "BYPASS"
+                },
+                {
+                  "key": "X-Vercel-Id",
+                  "value": "sin1::iad1::7sc82-1706943588125-5ea89746857a"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Sales retrieve successfully\",\n    \"data\": [\n        {\n            \"_id\": \"65bde42c7a5cb1bca06f5ed8\",\n            \"product\": {\n                \"_id\": \"65bdd29a59e54455a025d543\",\n                \"name\": \"Retro Hello Variant\",\n                \"price\": 500,\n                \"quantity\": 96,\n                \"frameMaterial\": \"metal\",\n                \"frameShape\": \"browline\",\n                \"lensType\": \"blue-cut\",\n                \"brand\": \"Brand1\",\n                \"gender\": \"men\",\n                \"color\": \"grey\",\n                \"image\": \"https://res.cloudinary.com/djs19qulb/image/upload/v1706939033/zrhlvkrso1nrupec1h7a.jpg\",\n                \"isDeleted\": false,\n                \"createdAt\": \"2024-01-31T06:11:12.949Z\",\n                \"updatedAt\": \"2024-02-03T06:58:53.168Z\",\n                \"__v\": 0\n            },\n            \"productPrice\": 500,\n            \"quantity\": 4,\n            \"buyerName\": \"Jr Tahsin\",\n            \"seller\": {\n                \"_id\": \"65bde1067a5cb1bca06f5eae\",\n                \"name\": \"Mohammad Farhad\",\n                \"email\": \"mfarhad21@gmail.com\",\n                \"avatar\": \"https://res.cloudinary.com/djs19qulb/image/upload/v1706942725/vpel7jofqoepkfgqflue.jpg\",\n                \"createdAt\": \"2024-02-03T06:45:26.144Z\",\n                \"updatedAt\": \"2024-02-03T06:45:26.144Z\",\n                \"__v\": 0\n            },\n            \"saleAt\": \"2024-02-03T06:58:52.967Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65bdd2b526c43daf327804dd\",\n            \"product\": {\n                \"_id\": \"65b9e48064a0bbc43b02d43f\",\n                \"name\": \"Retro Hello\",\n                \"price\": 200,\n                \"quantity\": 7,\n                \"frameMaterial\": \"metal\",\n                \"frameShape\": \"browline\",\n                \"lensType\": \"blue-cut\",\n                \"brand\": \"Brand1\",\n                \"gender\": \"men\",\n                \"color\": \"grey\",\n                \"image\": \"https://res.cloudinary.com/djs19qulb/image/upload/v1706681472/pjdus5qbhqgna4mzf5tb.jpg\",\n                \"isDeleted\": true,\n                \"createdAt\": \"2024-01-31T06:11:12.949Z\",\n                \"updatedAt\": \"2024-02-03T06:56:23.375Z\",\n                \"__v\": 0\n            },\n            \"productPrice\": 200,\n            \"quantity\": 3,\n            \"buyerName\": \"Buyer 1\",\n            \"seller\": {\n                \"_id\": \"65bdd22559e54455a025d52f\",\n                \"name\": \"Mohammad Farhad\",\n                \"email\": \"mfarhad@gmail.com\",\n                \"avatar\": \"https://res.cloudinary.com/djs19qulb/image/upload/v1706938916/omhd0xj6bnbne6drsgqq.png\",\n                \"createdAt\": \"2024-02-03T05:41:57.522Z\",\n                \"updatedAt\": \"2024-02-03T05:41:57.522Z\",\n                \"__v\": 0\n            },\n            \"saleAt\": \"2024-02-03T05:44:21.238Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65bcac70555faba7ae46632b\",\n            \"product\": {\n                \"_id\": \"65b9e48064a0bbc43b02d43f\",\n                \"name\": \"Retro Hello\",\n                \"price\": 200,\n                \"quantity\": 7,\n                \"frameMaterial\": \"metal\",\n                \"frameShape\": \"browline\",\n                \"lensType\": \"blue-cut\",\n                \"brand\": \"Brand1\",\n                \"gender\": \"men\",\n                \"color\": \"grey\",\n                \"image\": \"https://res.cloudinary.com/djs19qulb/image/upload/v1706681472/pjdus5qbhqgna4mzf5tb.jpg\",\n                \"isDeleted\": true,\n                \"createdAt\": \"2024-01-31T06:11:12.949Z\",\n                \"updatedAt\": \"2024-02-03T06:56:23.375Z\",\n                \"__v\": 0\n            },\n            \"productPrice\": 100,\n            \"quantity\": 3,\n            \"buyerName\": \"Rahim\",\n            \"seller\": {\n                \"_id\": \"65bcaaf1555faba7ae466313\",\n                \"name\": \"Admin Eyeglasses\",\n                \"email\": \"admin@gmail.com\",\n                \"avatar\": \"https://res.cloudinary.com/djs19qulb/image/upload/v1706863341/uvmf0qkcxyus5uaa4itp.jpg\",\n                \"createdAt\": \"2024-02-02T08:42:25.047Z\",\n                \"updatedAt\": \"2024-02-02T08:42:25.047Z\",\n                \"__v\": 0\n            },\n            \"saleAt\": \"2024-02-02T08:48:48.601Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Sell",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWJkZTEwNjdhNWNiMWJjYTA2ZjVlYWUiLCJlbWFpbCI6Im1mYXJoYWQyMUBnbWFpbC5jb20iLCJpYXQiOjE3MDY5NDI5MjcsImV4cCI6MTcwNzU0NzcyN30.1PRg-dbp39F-Kqnq3di8Z3VLxgdJgJ2REwPNfpt9-14",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{api-eyeglasses-management}}/sales/65bde42c7a5cb1bca06f5ed8",
+              "host": ["{{api-eyeglasses-management}}"],
+              "path": ["sales", "65bde42c7a5cb1bca06f5ed8"]
+            }
+          },
+          "response": [
+            {
+              "name": "Get Sell",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWJkZTEwNjdhNWNiMWJjYTA2ZjVlYWUiLCJlbWFpbCI6Im1mYXJoYWQyMUBnbWFpbC5jb20iLCJpYXQiOjE3MDY5NDI5MjcsImV4cCI6MTcwNzU0NzcyN30.1PRg-dbp39F-Kqnq3di8Z3VLxgdJgJ2REwPNfpt9-14",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{api-eyeglasses-management}}/sales/65bde42c7a5cb1bca06f5ed8",
+                  "host": ["{{api-eyeglasses-management}}"],
+                  "path": ["sales", "65bde42c7a5cb1bca06f5ed8"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "public, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "898"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 03 Feb 2024 07:00:25 GMT"
+                },
+                {
+                  "key": "Etag",
+                  "value": "W/\"382-jJJ3rHwcQ3iTKWhJYT8d5PUJNZ0\""
+                },
+                {
+                  "key": "Server",
+                  "value": "Vercel"
+                },
+                {
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=63072000; includeSubDomains; preload"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "X-Vercel-Cache",
+                  "value": "BYPASS"
+                },
+                {
+                  "key": "X-Vercel-Id",
+                  "value": "sin1::iad1::7jnjk-1706943624738-c8a985940339"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Sale retrieve successfully\",\n    \"data\": {\n        \"_id\": \"65bde42c7a5cb1bca06f5ed8\",\n        \"product\": {\n            \"_id\": \"65bdd29a59e54455a025d543\",\n            \"name\": \"Retro Hello Variant\",\n            \"price\": 500,\n            \"quantity\": 96,\n            \"frameMaterial\": \"metal\",\n            \"frameShape\": \"browline\",\n            \"lensType\": \"blue-cut\",\n            \"brand\": \"Brand1\",\n            \"gender\": \"men\",\n            \"color\": \"grey\",\n            \"image\": \"https://res.cloudinary.com/djs19qulb/image/upload/v1706939033/zrhlvkrso1nrupec1h7a.jpg\",\n            \"isDeleted\": false,\n            \"createdAt\": \"2024-01-31T06:11:12.949Z\",\n            \"updatedAt\": \"2024-02-03T06:58:53.168Z\",\n            \"__v\": 0\n        },\n        \"productPrice\": 500,\n        \"quantity\": 4,\n        \"buyerName\": \"Jr Tahsin\",\n        \"seller\": {\n            \"_id\": \"65bde1067a5cb1bca06f5eae\",\n            \"name\": \"Mohammad Farhad\",\n            \"email\": \"mfarhad21@gmail.com\",\n            \"avatar\": \"https://res.cloudinary.com/djs19qulb/image/upload/v1706942725/vpel7jofqoepkfgqflue.jpg\",\n            \"createdAt\": \"2024-02-03T06:45:26.144Z\",\n            \"updatedAt\": \"2024-02-03T06:45:26.144Z\",\n            \"__v\": 0\n        },\n        \"saleAt\": \"2024-02-03T06:58:52.967Z\",\n        \"__v\": 0\n    }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dashboard",
+      "item": [
+        {
+          "name": "Dashboard",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWJkZTEwNjdhNWNiMWJjYTA2ZjVlYWUiLCJlbWFpbCI6Im1mYXJoYWQyMUBnbWFpbC5jb20iLCJpYXQiOjE3MDY5NDI5MjcsImV4cCI6MTcwNzU0NzcyN30.1PRg-dbp39F-Kqnq3di8Z3VLxgdJgJ2REwPNfpt9-14",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{api-eyeglasses-management}}/dashboard",
+              "host": ["{{api-eyeglasses-management}}"],
+              "path": ["dashboard"]
+            }
+          },
+          "response": [
+            {
+              "name": "Dashboard",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWJkZTEwNjdhNWNiMWJjYTA2ZjVlYWUiLCJlbWFpbCI6Im1mYXJoYWQyMUBnbWFpbC5jb20iLCJpYXQiOjE3MDY5NDI5MjcsImV4cCI6MTcwNzU0NzcyN30.1PRg-dbp39F-Kqnq3di8Z3VLxgdJgJ2REwPNfpt9-14",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{api-eyeglasses-management}}/dashboard",
+                  "host": ["{{api-eyeglasses-management}}"],
+                  "path": ["dashboard"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "public, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "167"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 03 Feb 2024 06:57:40 GMT"
+                },
+                {
+                  "key": "Etag",
+                  "value": "W/\"a7-6BSGXyaew1QvsnagDR0GNflz8eU\""
+                },
+                {
+                  "key": "Server",
+                  "value": "Vercel"
+                },
+                {
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=63072000; includeSubDomains; preload"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "X-Vercel-Cache",
+                  "value": "BYPASS"
+                },
+                {
+                  "key": "X-Vercel-Id",
+                  "value": "sin1::iad1::9vn8l-1706943459591-28e5a35ab447"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Data retrieved successfully\",\n    \"data\": {\n        \"sales\": [\n            {\n                \"_id\": \"2024-04\",\n                \"totalQuantity\": 6\n            }\n        ],\n        \"totalSales\": 2,\n        \"totalEyeglasses\": 15,\n        \"totalRevenue\": 1200\n    }\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

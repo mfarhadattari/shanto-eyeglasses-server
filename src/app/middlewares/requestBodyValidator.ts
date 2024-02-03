@@ -5,7 +5,6 @@ const requestBodyValidator = (validationSchema: AnyZodObject) => {
   return catchAsync(async (req, res, next) => {
     await validationSchema.parseAsync({
       body: req.body,
-      cookies: req.cookies,
     });
     return next();
   });

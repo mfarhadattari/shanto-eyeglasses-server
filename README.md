@@ -11,7 +11,7 @@ git clone https://github.com/Porgramming-Hero-web-course/l2b2-full-stack-a5-serv
 ### Install Dependencies
 
 ```bash
-cd mongoose-express-crud-mastery
+cd l2b2-full-stack-a5-server-side-mfarhadattari
 yarn
 ```
 

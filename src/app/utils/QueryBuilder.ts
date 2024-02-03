@@ -1,4 +1,6 @@
 import { FilterQuery, Query } from 'mongoose';
+import { TOtherRelevantAttributes } from '../modules/eyeglass/eyeglass.interface';
+import { formatOtherRelevantAttributes } from './searchQuery';
 
 class QueryBuilder<T> {
   public modelQuery: Query<T[], T>;
@@ -45,8 +47,24 @@ class QueryBuilder<T> {
       }
     }
 
-    const excludeFields = ['searchTerm', 'page', 'limit', 'price'];
+    const otherRelevantAttributesStr = queryObject.otherRelevantAttributes;
+    const excludeFields = [
+      'searchTerm',
+      'page',
+      'limit',
+      'price',
+      'otherRelevantAttributes',
+    ];
     excludeFields.forEach((field) => delete queryObject[field]);
+
+    if (otherRelevantAttributesStr) {
+      const otherRelevantAttributes: TOtherRelevantAttributes =
+        formatOtherRelevantAttributes(otherRelevantAttributesStr as string);
+
+      for (const [key, value] of Object.entries(otherRelevantAttributes)) {
+        queryObject[`otherRelevantAttributes.${key}`] = value;
+      }
+    }
 
     this.modelQuery = this.modelQuery
       .find(queryObject as FilterQuery<T>)

@@ -6,7 +6,9 @@
 
 ### Clone the repository
 
+```bash
 git clone https://github.com/Porgramming-Hero-web-course/l2b2-full-stack-a5-server-side-mfarhadattari.git
+```
 
 ### Install Dependencies
 

@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import { Server } from 'http';
 import mongoose from 'mongoose';
+import { seedManager } from './DB';
 import app from './app';
 import config from './config';
 
@@ -15,8 +16,9 @@ let server: Server;
   // connecting db
   await mongoose
     .connect(config.DB_URI as string)
-    .then(() => {
+    .then(async () => {
       console.dir(`[SERVER] : Database connected...`);
+      await seedManager();
     })
     .catch((error) => {
       console.dir(error.message);

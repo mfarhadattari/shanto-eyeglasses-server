@@ -19,6 +19,13 @@ const config = {
   ACCESS_TOKEN_EXPIRES: process.env.ACCESS_TOKEN_EXPIRES as string,
   REFRESH_TOKEN_SECRET: process.env.REFRESH_TOKEN_SECRET as string,
   REFRESH_TOKEN_EXPIRES: process.env.REFRESH_TOKEN_EXPIRES as string,
+  MANAGER_INFO: {
+    name: process.env.MANAGER_NAME as string,
+    email: process.env.MANAGER_EMAIL as string,
+    password: process.env.MANAGER_PASS as string,
+    avatar: './icon.png',
+    role: 'manager',
+  },
 };
 
 export default config;

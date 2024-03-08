@@ -51,6 +51,7 @@ const loginUser = async (payload: { email: string; password: string }) => {
   const jwtPayload = {
     _id: isUserExist._id,
     email: isUserExist.email,
+    role: isUserExist.role,
   };
   const accessToken = await generateToken(
     jwtPayload,
@@ -92,7 +93,9 @@ const refreshToken = async (token: string) => {
   const jwtPayload = {
     _id: isUserExist._id,
     email: isUserExist.email,
+    role: isUserExist.role,
   };
+
   const accessToken = await generateToken(
     jwtPayload,
     config.ACCESS_TOKEN_SECRET,

@@ -18,9 +18,11 @@ const addSale = catchAsync(async (req, res) => {
 
 // get all sales controller
 const getAllSales = catchAsync(async (req, res) => {
+  const user = req.user;
+
   const filter =
     (req.query.filter as 'daily' | 'weekly' | 'monthly' | 'yearly') || null;
-  const result = await SaleServices.getAllSales(filter);
+  const result = await SaleServices.getAllSales(user, filter);
 
   sendResponse(res, {
     status: httpStatus.OK,

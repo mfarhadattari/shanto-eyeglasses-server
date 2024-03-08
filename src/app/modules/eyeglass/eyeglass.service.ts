@@ -1,5 +1,6 @@
 import httpStatus from 'http-status';
-import { Types } from 'mongoose';
+import { JwtPayload } from 'jsonwebtoken';
+import { Query, Types } from 'mongoose';
 import AppError from '../../error/AppError';
 import QueryBuilder from '../../utils/QueryBuilder';
 import { uploadFileIntoCloud } from '../../utils/fileUpload';
@@ -7,21 +8,31 @@ import { IEyeglass } from './eyeglass.interface';
 import { Eyeglass } from './eyeglass.model';
 
 // add eyeglass service
-const addEyeglass = async (file: any, payload: IEyeglass) => {
+const addEyeglass = async (user: JwtPayload, file: any, payload: IEyeglass) => {
   // upload file
   const { secure_url } = (await uploadFileIntoCloud(file)) as any;
   if (!secure_url) {
     throw new AppError(httpStatus.BAD_REQUEST, 'File upload failed');
   }
   payload.image = secure_url;
+
+  payload.seller = user._id;
   // save into db
   const result = await Eyeglass.create(payload);
   return result;
 };
 
 // get all eyeglasses service
-const getEyeglasses = async (searchQuery: Record<string, unknown>) => {
-  const modelQuery = Eyeglass.find();
+const getEyeglasses = async (
+  user: JwtPayload,
+  searchQuery: Record<string, unknown>,
+) => {
+  let modelQuery: Query<IEyeglass[], IEyeglass>;
+  if (user.role === 'manager') {
+    modelQuery = Eyeglass.find();
+  } else {
+    modelQuery = Eyeglass.find({ seller: user._id });
+  }
   const eyeglassQuery = new QueryBuilder(modelQuery, searchQuery)
     .searching(['name'])
     .filtering()

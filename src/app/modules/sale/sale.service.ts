@@ -74,6 +74,7 @@ const addSale = async (user: JwtPayload, payload: ISale) => {
 
 // get all sales
 const getAllSales = async (
+  user: JwtPayload,
   filter: 'daily' | 'weekly' | 'monthly' | 'yearly' | null,
 ) => {
   let filterQuery: Record<string, unknown> = {};
@@ -111,6 +112,13 @@ const getAllSales = async (
       saleAt: {
         $gt: new Date(new Date().getFullYear(), 0, 1),
       },
+    };
+  }
+
+  if (user.role !== 'manager') {
+    filterQuery = {
+      ...filterQuery,
+      seller: user._id,
     };
   }
 

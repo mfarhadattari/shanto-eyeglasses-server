@@ -5,9 +5,10 @@ import { EyeglassServices } from './eyeglass.service';
 
 // add eyeglass controller
 const addEyeglass = catchAsync(async (req, res) => {
+  const user = req.user;
   const data = req.body;
   const file = req.file;
-  const result = await EyeglassServices.addEyeglass(file, data);
+  const result = await EyeglassServices.addEyeglass(user, file, data);
 
   sendResponse(res, {
     status: httpStatus.CREATED,
@@ -18,8 +19,9 @@ const addEyeglass = catchAsync(async (req, res) => {
 
 // get all eyeglasses controller
 const getEyeglasses = catchAsync(async (req, res) => {
+  const user = req.user;
   const searchQuery = req.query;
-  const result = await EyeglassServices.getEyeglasses(searchQuery);
+  const result = await EyeglassServices.getEyeglasses(user, searchQuery);
 
   sendResponse(res, {
     status: httpStatus.OK,

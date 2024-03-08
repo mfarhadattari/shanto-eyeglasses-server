@@ -1,3 +1,5 @@
+import { Types } from 'mongoose';
+
 export type TFrameMaterial =
   | 'metal'
   | 'plastic'
@@ -66,4 +68,5 @@ export interface IEyeglass {
   image: string;
   otherRelevantAttributes: TOtherRelevantAttributes;
   isDeleted: boolean;
+  seller: Types.ObjectId;
 }

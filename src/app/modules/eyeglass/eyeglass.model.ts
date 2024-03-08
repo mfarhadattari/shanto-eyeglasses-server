@@ -61,6 +61,11 @@ const eyeglassSchema = new Schema<IEyeglass>(
       type: Boolean,
       default: false,
     },
+    seller: {
+      type: Schema.Types.ObjectId,
+      required: true,
+      ref: 'User',
+    },
   },
   { timestamps: true },
 );

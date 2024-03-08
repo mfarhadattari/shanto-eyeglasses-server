@@ -7,13 +7,13 @@
 ### Clone the repository
 
 ```bash
-git clone https://github.com/Porgramming-Hero-web-course/l2b2-full-stack-a5-server-side-mfarhadattari.git
+git clone https://github.com/Porgramming-Hero-web-course/l2-b2-assignment-6-backend-mfarhadattari.git
 ```
 
 ### Install Dependencies
 
 ```bash
-cd l2b2-full-stack-a5-server-side-mfarhadattari
+cd l2-b2-assignment-6-backend-mfarhadattari
 yarn
 ```
 
@@ -25,6 +25,9 @@ PORT = <PORT>
 DB_URI = <DB_URI>
 APP_NAME = <APP_NAME>
 CLIENT_BASE_URL = <CLIENT_BASE_URL>
+MANAGER_NAME = <MANAGER_NAME>
+MANAGER_EMAIL = <MANAGER_EMAIL>
+MANAGER_PASS = <MANAGER_PASS>
 CLOUDINARY_CLOUD_NAME = <CLOUD_NAME>
 CLOUDINARY_API_KEY = <API_KEY>
 CLOUDINARY_API_SECRET = <API_SECRET>

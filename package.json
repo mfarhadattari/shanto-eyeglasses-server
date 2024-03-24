@@ -1,9 +1,9 @@
 {
-  "name": "api-eyeglasses-management",
-  "version": "1.0.0",
-  "description": "Backend of eyeglasses management dashboard.",
+  "name": "shanto-eyeglasses",
+  "version": "0.0.1",
+  "description": "Backend of shanto eyeglasses management dashboard.",
   "main": "/dist/server.js",
-  "repository": "https://github.com/Porgramming-Hero-web-course/l2b2-full-stack-a5-server-side-mfarhadattari.git",
+  "repository": "https://github.com/mfarhadattari/shanto-eyeglasses-server.git",
   "author": {
     "name": "Mohammad Farhad",
     "email": "mfarhad.dev@gmail.com"
